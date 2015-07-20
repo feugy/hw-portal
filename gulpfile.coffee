@@ -29,6 +29,7 @@ gulp.task 'clean', (done) ->
 handleError = (error) ->
   beep()
   log colors.red('Got error:\n'), error.toString()
+  @emit('end')
 
 buildStylus = ->
   gulp.src(paths.styles)

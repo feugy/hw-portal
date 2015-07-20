@@ -1,5 +1,12 @@
 @require 'variables'
 
+// Panel layout must fill maximum vertical space
+body > .ember-view
+.l-main-view
+.l-panel-layout
+.l-panel-wrap
+  height 100%
+  
 .l-parallax
 
   > .background
@@ -24,8 +31,37 @@
     padding 50px
     font-size 20px
     background-color $main-bg-color
-      
-/**
-.l-nav
-  background-color $red
-*/
+    
+.l-panel
+  padding 1em
+  
+// Main layout is to always display off-canvas's left menu
+// Therefore we must cancel foundation's off-canvas behaviour
+@media only screen and (min-width: 64.0625em)
+  
+  .l-panel-wrap
+    // Hide menu toggler
+    > .l-header > .left-small
+      border 0
+      > .left-off-canvas-toggle
+        display none
+      > .tab-bar-section
+        left 0
+
+    // Shift all content to right
+    > *
+      margin-left 15.625rem
+
+    // And displays off-canvas left menu
+    > .l-menu
+      margin-left 0
+      transform none
+      position fixed
+
+  // When going from small screen to larger screen, cancel move-right class
+  .move-right > .l-panel-wrap
+    transform none
+    
+    > .exit-off-canvas
+      display none
+    
