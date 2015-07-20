@@ -40,6 +40,7 @@ I18n.translations.fr =
 
   nav:
     rankings: 'Classements'
+    welcome: 'Accueil'
 
   test:
     one: 'Salut le monde !'

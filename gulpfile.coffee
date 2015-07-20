@@ -7,7 +7,7 @@ lint = require 'gulp-coffeelint'
 concat = require 'gulp-concat'
 sourcemaps = require 'gulp-sourcemaps'
 run = require 'run-sequence'
-{log, beep} = require 'gulp-util'
+{log, beep, colors} = require 'gulp-util'
 rimraf = require 'rimraf'
 htmlbars = require 'gulp-htmlbars'
 declare = require 'gulp-declare'
@@ -26,20 +26,23 @@ paths =
 gulp.task 'clean', (done) ->
   rimraf paths.dest, done
 
+handleError = (error) ->
+  beep()
+  log colors.red('Got error:\n'), error.toString()
+
 buildStylus = ->
   gulp.src(paths.styles)
-    .pipe(plumber())
+    .pipe(plumber(errorHandler: handleError))
     .pipe(stylint failOnError: true, config: '.stylintrc')
     .pipe(sourcemaps.init())
     .pipe(gulpFilter paths.mainStyles)
     .pipe(stylus())
     .pipe(sourcemaps.write '.')
-    .pipe(plumber.stop())
     .pipe(gulp.dest paths.dest)
 
 buildHtmlbars = ->
   gulp.src(paths.tpl)
-    .pipe(plumber())
+    .pipe(plumber(errorHandler: handleError))
     .pipe(htmlbars
       templateCompiler: require './vendor/ember-template-compiler'
     )
@@ -49,12 +52,11 @@ buildHtmlbars = ->
       noRedeclare: true
     )
     .pipe(concat 'templates.js')
-    .pipe(plumber.stop())
     .pipe(gulp.dest paths.dest)
 
 buildCoffee = ->
   gulp.src(paths.src)
-    .pipe(plumber())
+    .pipe(plumber(errorHandler: handleError))
     .pipe(lint optFile: '.coffeelintrc')
     .pipe(lint.reporter())
     .pipe(lint.reporter 'fail')
@@ -62,7 +64,6 @@ buildCoffee = ->
     .pipe(coffee bare: true)
     .pipe(concat paths.mainSource)
     .pipe(sourcemaps.write '.')
-    .pipe(plumber.stop())
     .pipe(gulp.dest paths.dest)
 
 gulp.task 'build:coffee', buildCoffee
@@ -71,13 +72,10 @@ gulp.task 'build:stylus', buildStylus
 
 # TODO tests with testem and coverage
 
-gulp.task 'dev', ['build'], ->
-  gulp.watch paths.tpl, ->
-    buildHtmlbars().on('error', -> beep()).on 'end', -> log('htmlbars recompiled')
-  gulp.watch paths.src, ->
-    buildCoffee().on('error', -> beep()).on 'end', -> log('coffee recompiled')
-  gulp.watch paths.styles, ->
-    buildStylus().on('error', -> beep()).on 'end', -> log('stylus recompiled')
+gulp.task 'dev', ->
+  gulp.watch paths.tpl, ['build:htmlbars']
+  gulp.watch paths.src, ['build:coffee']
+  gulp.watch paths.styles, ['build:stylus']
   gulp.src('.')
     .pipe(webserver
       livereload:
