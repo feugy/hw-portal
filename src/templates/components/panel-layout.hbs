@@ -1,0 +1,22 @@
+<div class="inner-wrap l-panel-wrap">
+
+  <header class="tab-bar l-header">
+    <div class="left-small">
+      <a class="left-off-canvas-toggle menu-icon"><span></span></a>
+      <span class="middle tab-bar-section"><h1 class="title">{{translate title}}</h1></span>
+    </div>
+  </header>
+
+  <aside id="left-menu" class="left-off-canvas-menu l-menu">
+    <ul class="off-canvas-list">
+      <li>{{#link-to 'index' class="nav-link"}}{{translate 'nav.index'}}{{/link-to}}</li>
+      <li>{{#link-to 'rankings' class="nav-link"}}{{translate 'nav.rankings'}}{{/link-to}}</li>
+    </ul>
+  </aside>
+
+  <section class="l-panel">
+    {{yield}}
+  </section>
+
+  <a class="exit-off-canvas"></a>
+</div>

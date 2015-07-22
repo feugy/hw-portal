@@ -39,8 +39,8 @@ I18n.translations.fr =
     welcome: 'Une terrible menace sommeille dans les ombres...'
 
   nav:
+    index: 'Accueil'
     rankings: 'Classements'
-    welcome: 'Accueil'
 
   test:
     one: 'Salut le monde !'

@@ -14,14 +14,17 @@ declare = require 'gulp-declare'
 replace = require 'gulp-replace'
 webserver = require 'gulp-webserver'
 gulpFilter = require 'gulp-filter'
+{resolve, basename, dirname} = require 'path'
 
 paths =
   src: 'src/**/*.coffee'
   mainSource: 'app.js'
   tpl: 'src/templates/**/*.hbs'
+  tplRoot: resolve 'src/templates'
   styles: 'src/styles/**/*.styl'
   mainStyles: 'app.styl'
   dest: 'build'
+
 
 gulp.task 'clean', (done) ->
   rimraf paths.dest, done
@@ -51,6 +54,11 @@ buildHtmlbars = ->
     .pipe(declare
       namespace: 'Ember.TEMPLATES'
       noRedeclare: true
+      processName: (name) ->
+        # if template is in subfolder, keep subfolders in name, replacing \ per /
+        path = dirname(name).replace paths.tplRoot, ''
+        path = path.replace(/\\/g, '/').slice(1) + '/' if path
+        path + basename name, '.hbs'
     )
     .pipe(concat 'templates.js')
     .pipe(gulp.dest paths.dest)
