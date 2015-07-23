@@ -36,7 +36,12 @@ I18n.translations.fr =
 
   # Custom keys
   ttl:
+    app: 'Huby Woky'
+    generalRanking: 'Classement général'
     welcome: 'Une terrible menace sommeille dans les ombres...'
+
+  lbl:
+    noResults: 'Aucun résultat'
 
   nav:
     index: 'Accueil'

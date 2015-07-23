@@ -1,0 +1,9 @@
+vendor-prefix(rule, args...)
+  -webkit-{rule} args
+  -khtml-{rule} args
+  -moz-{rule} args
+  -ms-{rule} args
+  {rule} args
+
+user-select(value)
+  vendor-prefix(user-select, value)

@@ -6,11 +6,10 @@ body > .ember-view
 .l-panel-layout
 .l-panel-wrap
   height 100%
-  
+
 .l-parallax
 
   > .background
-    background-color $primary-color
     height 620px
     background-repeat no-repeat
     background-size cover
@@ -18,6 +17,7 @@ body > .ember-view
     width 100%
     padding-top 15%
     text-align center
+    background-color $primary-color
 
     > .title
       display inline-block
@@ -31,22 +31,56 @@ body > .ember-view
     padding 50px
     font-size 20px
     background-color $main-bg-color
-    
+
+.l-header
+  margin -1em -1em 0
+  padding 0.5rem
+
 .l-panel
   padding 1em
-  
+
+.l-menu
+
+  > .l-title
+    text-align center
+    margin-bottom 0.5rem
+    > h2
+      color $primary-inverted-color
+
+  .nav-link.active, .nav-link.active:hover
+    position relative
+    color $primary-inverted-color
+
+    &:after
+      content ''
+      display block
+      height 0
+      width 0
+      position absolute
+      right 0
+      top 0.5em
+      border-top 1em solid transparent
+      border-bottom 1em solid transparent
+      border-right 1.5em solid $main-bg-color
+
+.l-header
+  background-color $primary-color
+  color $primary-inverted-color
+  margin -1em -1em 0
+  padding 0.1rem 1rem
+  > h2
+    color $primary-inverted-color
+
 // Main layout is to always display off-canvas's left menu
 // Therefore we must cancel foundation's off-canvas behaviour
 @media only screen and (min-width: 64.0625em)
-  
+
   .l-panel-wrap
+    overflow auto
+
     // Hide menu toggler
-    > .l-header > .left-small
-      border 0
-      > .left-off-canvas-toggle
-        display none
-      > .tab-bar-section
-        left 0
+    > .l-header
+      display none
 
     // Shift all content to right
     > *
@@ -61,7 +95,6 @@ body > .ember-view
   // When going from small screen to larger screen, cancel move-right class
   .move-right > .l-panel-wrap
     transform none
-    
+
     > .exit-off-canvas
       display none
-    

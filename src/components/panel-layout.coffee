@@ -4,6 +4,3 @@ App.PanelLayoutComponent = Ember.Component.extend
 
   attributeBindings: ['offCanvas:data-offcanvas']
   offCanvas: true
-
-  title: Ember.computed 'current',
-    get: -> 'nav.' + @get 'current'

@@ -37,7 +37,7 @@ handleError = (error) ->
 buildStylus = ->
   gulp.src(paths.styles)
     .pipe(plumber(errorHandler: handleError))
-    .pipe(stylint failOnError: true, config: '.stylintrc')
+    #.pipe(stylint failOnError: true, config: '.stylintrc')
     .pipe(sourcemaps.init())
     .pipe(gulpFilter paths.mainStyles)
     .pipe(stylus())

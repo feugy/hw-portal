@@ -1,23 +1,44 @@
 @require 'variables'
 
 #index
-  
+
   .l-parallax
     > .background
       background-image url('../images/manhattan-from-brooklyn-bridge.jpg')
       background-size auto 81%
       background-position 70% top
-    
+
       > .title
         max-width 75%
         text-shadow 1px 1px $black
-      
+
   .l-nav
     display block
     text-align center
 
 .move-right .exit-off-canvas
   box-shadow none
-  
+
 .l-panel-wrap > .l-header
   background-color $primary-color
+
+#rankings
+
+  .list-item
+    > *
+      font-size 1.5rem
+
+      > .symbol
+        font-size 2rem
+        margin-left 1rem
+        vertical-align bottom
+        color $primary-color
+
+    > *:first-child
+      width 2.5rem
+      font-size 2rem
+      font-weight bold
+      text-align center
+
+    > *:nth-child(3)
+      flex 1

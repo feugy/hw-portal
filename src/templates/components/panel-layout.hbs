@@ -3,11 +3,15 @@
   <header class="tab-bar l-header">
     <div class="left-small">
       <a class="left-off-canvas-toggle menu-icon"><span></span></a>
-      <span class="middle tab-bar-section"><h1 class="title">{{translate title}}</h1></span>
     </div>
+    <span class="middle tab-bar-section"><h1 class="title">{{translate 'ttl.app'}}</h1></span>
   </header>
 
   <aside id="left-menu" class="left-off-canvas-menu l-menu">
+    <div class="l-title">
+      <h2>{{translate 'ttl.app'}}</h2>
+      <img src="http://placehold.it/200x200">
+    </div>
     <ul class="off-canvas-list">
       <li>{{#link-to 'index' class="nav-link"}}{{translate 'nav.index'}}{{/link-to}}</li>
       <li>{{#link-to 'rankings' class="nav-link"}}{{translate 'nav.rankings'}}{{/link-to}}</li>
