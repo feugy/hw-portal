@@ -5,7 +5,7 @@ App.RankingsRoute = Ember.Route.extend
   loading: false
 
   model: ->
-    @_loadNext()
+    @get('controller.model') or @_loadNext()
 
   actions:
     # Action invoked when a new page of models need to be loaded
@@ -15,6 +15,7 @@ App.RankingsRoute = Ember.Route.extend
     load: ->
       return unless @hasMore and not @loading
       @_loadNext().then (models) =>
+        return unless models?
         # we cannot return just the loaded models, but instead we must enrich the
         # current controller model array.
         # it ensure template refreshing while keeping already fetched models
@@ -34,12 +35,13 @@ App.RankingsRoute = Ember.Route.extend
     offset = -10 unless offset?
     limit = 10 unless limit?
     total = 0 unless total?
-    req = null
 
     # depending on remaining models, ask for a new page of models
-    return null unless @hasMore
+    return new Ember.RSVP.Promise((resolve) => Ember.run.later {}, resolve) unless total >= offset + limit
+
     # refresh flags to inhibit new loading and reflect remaining models
     @loading = true
+    console.log ">>> load from #{offset + limit} to #{offset + limit} until #{total} (has more: #{@hasMore})"
     @store.find('gamer', offset: offset + limit, limit: limit)
       .then (models) =>
         # if request succeeded, refresh flags using last server data
