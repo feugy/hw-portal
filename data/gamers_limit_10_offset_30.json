@@ -1,0 +1,23 @@
+{
+  "gamer": [{
+    "pseudo": "Marc",
+    "deltaCount": 17,
+    "trophyCount": 39,
+    "score": 5600
+  }, {
+    "pseudo": "Baptiste",
+    "deltaCount": 24,
+    "trophyCount": 67,
+    "score": 5587
+  }, {
+    "pseudo": "Gabriel",
+    "deltaCount": 5,
+    "trophyCount": 54,
+    "score": 5539
+  }],
+  "meta": {
+    "total": 33,
+    "offset": 30,
+    "limit": 10
+  }
+}

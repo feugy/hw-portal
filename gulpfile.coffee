@@ -15,6 +15,8 @@ replace = require 'gulp-replace'
 webserver = require 'gulp-webserver'
 gulpFilter = require 'gulp-filter'
 {resolve, basename, dirname} = require 'path'
+{parse} = require 'url'
+{parse: parseQuery} = require 'querystring'
 
 paths =
   src: 'src/**/*.coffee'
@@ -87,6 +89,18 @@ gulp.task 'dev', ->
   gulp.watch paths.styles, ['build:stylus']
   gulp.src('.')
     .pipe(webserver
+      # Custom middleware to append query params in file name for data fixtures
+      middleware: (req, res, next) ->
+        url = parse req.url
+        return next() unless /^\/data/.test url.pathname
+        args = ''
+        query = parseQuery url.query
+        for param in Object.keys(query).sort()
+          args += "_#{param}_#{query[param]}"
+        sep = url.pathname.lastIndexOf '.'
+        req.url = url.pathname[0...sep] + args + url.pathname[sep..]
+        console.log "serve fixture #{req.url}"
+        next()
       livereload:
         enable: true
         filter: (filename) ->
