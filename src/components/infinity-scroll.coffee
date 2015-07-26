@@ -14,6 +14,10 @@ App.InfinityScrollComponent = Ember.Component.extend
   # Provide here a selector to the scrollable DOM node. Whole window by default
   scrollable: null
 
+  actions:
+    scrollToTop: ->
+      @get('scrollable')?.animate scrollTop: 0
+
   # On component insertion, get the scrollable node and bind event handlers
   didInsertElement: (args...) ->
     @_super args...

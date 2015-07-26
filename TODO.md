@@ -1,5 +1,3 @@
 # Rankings
-- ex-aequo
-- change rankings
+- change type of rankings
 - keep scroll when returning to route
-- add scroll to top button

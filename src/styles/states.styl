@@ -4,12 +4,15 @@
   $color = darken($primary-color, 40%)
   transition($prop = all, $duration = 150ms)
     transition $prop $duration
-    
-  
+
+
   > i
     transition background-color
     background-color $color
-    
+
   > label
     transition color
     color $color
+
+.button:hover, .button:focus, .button:active
+    background-color darken($primary-color, 40%)

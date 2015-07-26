@@ -37,11 +37,10 @@ App.RankingsRoute = Ember.Route.extend
     total = 0 unless total?
 
     # depending on remaining models, ask for a new page of models
-    return new Ember.RSVP.Promise((resolve) => Ember.run.later {}, resolve) unless total >= offset + limit
+    return new Ember.RSVP.Promise((resolve) -> Ember.run.later {}, resolve) unless total >= offset + limit
 
     # refresh flags to inhibit new loading and reflect remaining models
     @loading = true
-    console.log ">>> load from #{offset + limit} to #{offset + limit} until #{total} (has more: #{@hasMore})"
     @store.find('gamer', offset: offset + limit, limit: limit)
       .then (models) =>
         # if request succeeded, refresh flags using last server data

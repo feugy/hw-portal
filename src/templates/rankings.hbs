@@ -3,8 +3,8 @@
     <h2>{{translate title}}</h2>
   </header>
   <ul class="list">
-    {{#each model as |gamer i|}}
-      {{ranking-gamer gamer=gamer idx=i}}
+    {{#each model as |gamer|}}
+      {{ranking-gamer gamer=gamer list=model}}
     {{else}}
       <li>{{translate 'lbl.noResults'}}</li>
     {{/each}}

@@ -42,6 +42,8 @@ I18n.translations.fr =
 
   lbl:
     noResults: 'Aucun résultat'
+    scrollEnds: 'Tous les résultats sont affichés'
+    scrollLoading: 'Chargement en cours...'
 
   nav:
     index: 'Accueil'
