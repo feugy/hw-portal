@@ -70,29 +70,3 @@ body > .ember-view
   padding 0.1rem 1rem
   > h2
     color $primary-inverted-color
-
-// Main layout is to always display off-canvas's left menu
-// Therefore we must cancel foundation's off-canvas behaviour
-@media only screen and (min-width: 64.0625em)
-
-  .l-panel-wrap
-    // Hide menu toggler
-    > .l-header
-      display none
-
-    // Shift all content to right
-    > *
-      margin-left 15.625rem
-
-    // And displays off-canvas left menu
-    > .l-menu
-      margin-left 0
-      transform none
-      position fixed
-
-  // When going from small screen to larger screen, cancel move-right class
-  .move-right > .l-panel-wrap
-    transform none
-
-    > .exit-off-canvas
-      display none
