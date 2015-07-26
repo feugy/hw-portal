@@ -3,14 +3,43 @@
 #index
 
   .l-parallax
-    > .background
-      background-image url('../images/manhattan-from-brooklyn-bridge.jpg')
-      background-size auto 81%
-      background-position 70% top
+
+    > .background:first-child
+      background-image url('../images/the-city-that-never-sleeps_ad-wheeler.jpg')
+      background-position center top
+      padding-top 35vh
+      text-align center
+      z-index 2
 
       > .title
         max-width 75%
+        margin 0 auto
         text-shadow 1px 1px $black
+
+    > .foreground
+      min-height auto
+      z-index 1
+
+      &:before
+        background-image url('../images/not-that-way_alex-blackstorm.jpg')
+        background-position 75% center
+
+      > .content
+        width 70%
+        margin-left 0
+        margin-right auto
+
+    > .background:last-child
+      background-image url('../images/callejones-de-motomachi_javi-sevillano.jpg')
+      background-position center top
+      padding-top 20vh
+      z-index 0
+
+      > footer
+        padding 1rem
+        background $secondary-color
+        font-size 1rem
+
 
   .l-nav
     display block
