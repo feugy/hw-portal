@@ -37,13 +37,18 @@ I18n.translations.fr =
   # Custom keys
   ttl:
     app: 'Huby Woky'
+    deltasRanking: 'Classement par deltas'
     generalRanking: 'Classement général'
+    trophiesRanking: 'Classement des trophées'
     welcome: 'Une terrible menace sommeille dans les ombres...'
 
   lbl:
     noResults: 'Aucun résultat'
     scrollEnds: 'Tous les résultats sont affichés'
     scrollLoading: 'Chargement en cours...'
+    sortByDeltas: 'par deltas'
+    sortByScore: 'par score'
+    sortByTrophies: 'par trophées'
 
   nav:
     index: 'Accueil'
