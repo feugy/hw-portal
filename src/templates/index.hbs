@@ -1,8 +1,9 @@
 <section class="l-parallax">
-  <div class="l-slide background">
+  <div class="l-slide background" id="slide1">
     <h1 class="title">{{translate 'ttl.welcome'}}</h1>
+    <button class="scroller button" {{action "scrollTo" "#slide2"}}><i class="fi-arrow-down"></i></button>
   </div>
-  <div class="l-slide foreground">
+  <div class="l-slide foreground" id="slide2">
     <div class="content">
       <h2>Plongez dans l'univers d'Huby Woky</h2>
       <p>
@@ -33,8 +34,9 @@
       {{#link-to 'rankings' class='icon-link'}}<i class="fi-list-thumbnails"></i><label>{{translate 'nav.rankings'}}</label>{{/link-to}}
       </nav>
     </div>
+    <button class="button scroller" {{action "scrollTo" "#slide3"}}><i class="fi-arrow-down"></i></button>
   </div>
-  <div class="l-slide background">
+  <div class="l-slide background" id="slide3">
     <footer>&copy; Hubvious 2015</footer>
   </div>
 </section>

@@ -4,7 +4,22 @@
 
   .l-parallax
 
-    > .background:first-child
+    .scroller
+      $edge = 5rem
+      font-size 3rem
+      text-align center
+      width $edge
+      line-height $edge
+      border-radius 100%
+      background-color $primary-color
+      color $primary-inverted-color
+      position absolute
+      bottom -3%
+      right 5%
+      margin 0
+      padding 0
+
+    > #slide1
       background-image url('../images/the-city-that-never-sleeps_ad-wheeler.jpg')
       background-position center top
       padding-top 35vh
@@ -16,7 +31,7 @@
         margin 0 auto
         text-shadow 1px 1px $black
 
-    > .foreground
+    > #slide2
       min-height auto
       z-index 1
 
@@ -29,7 +44,7 @@
         margin-left 0
         margin-right auto
 
-    > .background:last-child
+    > #slide3
       background-image url('../images/callejones-de-motomachi_javi-sevillano.jpg')
       background-position center top
       padding-top 20vh
