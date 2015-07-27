@@ -63,9 +63,6 @@
 .move-right .exit-off-canvas
   box-shadow none
 
-.l-panel-wrap > .l-header
-  background-color $primary-color
-
 #rankings
 
   .l-header > div
@@ -80,8 +77,10 @@
     display flex
     flex-direction column
     height 100%
+    padding 0
 
   .list
+    padding 1rem
     flex 1
     overflow-y auto
     position relative
@@ -89,6 +88,7 @@
   .list-item
     > *
       font-size 1.5rem
+      white-space nowrap
 
       > .symbol
         font-size 2rem
@@ -104,3 +104,5 @@
 
     > *:nth-child(3)
       flex 1
+      text-overflow ellipsis
+      overflow hidden

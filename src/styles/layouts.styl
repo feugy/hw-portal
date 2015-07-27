@@ -77,9 +77,21 @@ body > .ember-view
 
 .l-header
   background-color $primary-color
-  margin -1em -1em 0
-  margin -1em -1em 0
   padding 0.1rem 1rem
+  max-width inherit
 
   > h2
     color $primary-inverted-color
+
+// On small screen, only display the toggle menu button
+.l-panel-wrap > .l-header
+  background-color $primary-color
+  position absolute
+  z-index 1
+  padding 0
+
+  > .left-small
+    height auto
+
+    > .menu-icon
+      height 3.2rem

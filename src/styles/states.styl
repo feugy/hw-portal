@@ -17,6 +17,8 @@
 .button:hover, .button:focus, .button:active
     background-color darken($primary-color, 40%)
 
+.infinity-scroll > .button:hover
+  opacity 1
 
 // Main layout is to always display off-canvas's left menu
 // Therefore we must cancel foundation's off-canvas behaviour
@@ -43,3 +45,12 @@
 
     > .exit-off-canvas
       display none
+
+@media only screen and (max-width: 64.0625em)
+
+  // Let some space for menu-icon button
+  .l-header > h2
+    padding-left 2rem
+
+  .button
+    padding .5rem 1rem
