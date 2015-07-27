@@ -1,10 +1,8 @@
 gulp = require 'gulp'
 plumber = require 'gulp-plumber'
-coffee = require 'gulp-coffee'
 stylus = require 'gulp-stylus'
 stylint = require 'gulp-stylint'
 lint = require 'gulp-coffeelint'
-concat = require 'gulp-concat'
 sourcemaps = require 'gulp-sourcemaps'
 run = require 'run-sequence'
 {log, beep, colors} = require 'gulp-util'
@@ -14,19 +12,25 @@ declare = require 'gulp-declare'
 replace = require 'gulp-replace'
 webserver = require 'gulp-webserver'
 gulpFilter = require 'gulp-filter'
+concat = require 'gulp-concat'
+source = require 'vinyl-source-stream'
+buffer = require 'vinyl-buffer'
+browserify = require 'browserify'
+coffeeify = require 'coffeeify'
+{assign} = require 'lodash'
 {resolve, basename, dirname} = require 'path'
 {parse} = require 'url'
 {parse: parseQuery} = require 'querystring'
 
 paths =
   src: 'src/**/*.coffee'
-  mainSource: 'app.js'
+  srcEntry: 'src/app.coffee'
   tpl: 'src/templates/**/*.hbs'
   tplRoot: resolve 'src/templates'
   styles: 'src/styles/**/*.styl'
-  mainStyles: 'app.styl'
+  stylesEntry: 'app.styl'
   dest: 'build'
-
+  destEntry: 'app.js'
 
 gulp.task 'clean', (done) ->
   rimraf paths.dest, done
@@ -41,7 +45,7 @@ buildStylus = ->
     .pipe(plumber(errorHandler: handleError))
     #.pipe(stylint failOnError: true, config: '.stylintrc')
     .pipe(sourcemaps.init())
-    .pipe(gulpFilter paths.mainStyles)
+    .pipe(gulpFilter paths.stylesEntry)
     .pipe(stylus())
     .pipe(sourcemaps.write '.')
     .pipe(gulp.dest paths.dest)
@@ -66,18 +70,25 @@ buildHtmlbars = ->
     .pipe(gulp.dest paths.dest)
 
 buildCoffee = ->
-  gulp.src(paths.src)
-    .pipe(plumber(errorHandler: handleError))
-    .pipe(lint optFile: '.coffeelintrc')
-    .pipe(lint.reporter())
-    .pipe(lint.reporter 'fail')
-    .pipe(sourcemaps.init())
-    .pipe(coffee bare: true)
-    .pipe(concat paths.mainSource)
+  bundler = browserify paths.srcEntry,
+    debug: true
+    extensions: ['.coffee']
+
+  bundler.transform coffeeify
+  bundler.bundle()
+    .pipe(source paths.destEntry)
+    .pipe(buffer())
+    .pipe(sourcemaps.init loadMaps: true)
     .pipe(sourcemaps.write '.')
     .pipe(gulp.dest paths.dest)
 
-gulp.task 'build:coffee', buildCoffee
+gulp.task 'lint:coffee', ->
+  gulp.src(paths.src)
+    .pipe(lint optFile: '.coffeelintrc')
+    .pipe(lint.reporter())
+    .pipe(lint.reporter 'fail')
+
+gulp.task 'build:coffee', ['lint:coffee'], buildCoffee
 gulp.task 'build:htmlbars', buildHtmlbars
 gulp.task 'build:stylus', buildStylus
 

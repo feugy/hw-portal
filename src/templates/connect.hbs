@@ -1,0 +1,48 @@
+{{#panel-layout}}
+  <div class="row">
+    <article class="small-6 column log-in">
+      <h1>{{translate 'ttl.logIn'}}</h1>
+      <div>
+        <h4>{{translate 'lbl.logInWith'}}</h4>
+        <ul class="l-nav">
+          <li><i class="fi-social-facebook"></i></li>
+          <li><i class="fi-social-google-plus"></i></li>
+        </ul>
+        <h4>{{translate 'lbl.logIn'}}</h4>
+        <form>
+          <div class="row">
+            {{input class="small-12 columns" placeholder=emailPlaceholder}}
+          </div>
+          <div class="row">
+            {{input class="small-12 columns" placeholder=passwordPlaceholder}}
+          </div>
+          <div class="row small-centered">
+            {{#link-to 'index' class="button"}}<i class="fi-paw"></i>{{translate 'btn.logIn'}}{{/link-to}}
+          </div>
+        </form>
+      </div>
+    </article>
+    <article class="small-6 column sign-in">
+      <h1>{{translate 'ttl.signIn'}}</h1>
+      <div>
+        <h4>{{translate 'lbl.signInWith'}}</h4>
+        <ul class="l-nav">
+          <li><i class="fi-social-facebook"></i></li>
+          <li><i class="fi-social-google-plus"></i></li>
+        </ul>
+        <h4>{{translate 'lbl.signIn'}}</h4>
+        <form>
+          <div class="row">
+            {{input class="small-12 columns" placeholder=emailLabel}}
+          </div>
+          <div class="row">
+            {{input class="small-12 columns" placeholder=passwordLabel}}
+          </div>
+          <div class="row small-centered">
+            {{#link-to 'index' class="button"}}<i class="fi-plus"></i>{{translate 'btn.signIn'}}{{/link-to}}
+          </div>
+        </form>
+      </div>
+    </article>
+  </div>
+{{/panel-layout}}

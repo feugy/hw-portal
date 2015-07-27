@@ -1,9 +1,13 @@
+require '../components/panel-layout'
+require '../components/infinity-scroll'
+require '../components/ranking-gamer'
+
 criteria = [
-  label: 'lbl.sortByScore', title: 'ttl.generalRanking', field: 'score'
+  label: 'btn.sortByScore', title: 'ttl.generalRanking', field: 'score'
 ,
-  label: 'lbl.sortByTrophies', title: 'ttl.trophiesRanking', field: 'trophyCount'
+  label: 'btn.sortByTrophies', title: 'ttl.trophiesRanking', field: 'trophyCount'
 ,
-  label: 'lbl.sortByDeltas', title: 'ttl.deltasRanking', field: 'deltaCount'
+  label: 'btn.sortByDeltas', title: 'ttl.deltasRanking', field: 'deltaCount'
 ]
 
 App.RankingsController = Ember.Controller.extend

@@ -7,12 +7,12 @@
   </header>
 
   <aside id="left-menu" class="left-off-canvas-menu l-menu">
-    <div class="l-title">
+    {{#link-to 'index' class="l-title nav-link" tagName="div"}}
       <h2>{{translate 'ttl.app'}}</h2>
       <img src="http://placehold.it/200x200">
-    </div>
+    {{/link-to}}
     <ul class="off-canvas-list">
-      <li>{{#link-to 'index' class="nav-link"}}{{translate 'nav.index'}}{{/link-to}}</li>
+      <li>{{#link-to 'connect' class="nav-link"}}{{translate 'nav.connect'}}{{/link-to}}</li>
       <li>{{#link-to 'rankings' class="nav-link"}}{{translate 'nav.rankings'}}{{/link-to}}</li>
     </ul>
   </aside>

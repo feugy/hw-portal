@@ -51,6 +51,13 @@ body > .ember-view
 .l-panel
   padding 1em
 
+.l-nav
+  display block
+  text-align center
+
+  > *:not(:first-child)
+    margin-left 1rem
+
 .l-menu
 
   > .l-title
@@ -78,7 +85,6 @@ body > .ember-view
 .l-header
   background-color $primary-color
   padding 0.1rem 1rem
-  max-width inherit
 
   > h2
     color $primary-inverted-color

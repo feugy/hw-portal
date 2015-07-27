@@ -1,3 +1,6 @@
+require '../models/gamer'
+require '../adapters/fixtures'
+
 App.RankingsRoute = Ember.Route.extend
 
   # initialize flags to allow first loading

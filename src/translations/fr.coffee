@@ -35,25 +35,36 @@ I18n.translations.fr =
         format: '%n %u'
 
   # Custom keys
-  ttl:
-    app: 'Huby Woky'
-    deltasRanking: 'Classement par deltas'
-    generalRanking: 'Classement général'
-    trophiesRanking: 'Classement des trophées'
-    welcome: 'Une terrible menace sommeille dans les ombres...'
-
-  lbl:
-    noResults: 'Aucun résultat'
-    scrollEnds: 'Tous les résultats sont affichés'
-    scrollLoading: 'Chargement en cours...'
+  btn:
+    logIn: 'Se connecter'
+    signIn: 'Créer un compte'
     sortByDeltas: 'par deltas'
     sortByScore: 'par score'
     sortByTrophies: 'par trophées'
 
+  lbl:
+    logIn: 'Ou utiliser ton compte Huby Woky'
+    logInWith: 'Connecte toi avec'
+    noResults: 'Aucun résultat'
+    signIn: 'Ou crée ton compte Huby Woky'
+    signInWith: 'Utilise ton compte'
+    scrollEnds: 'Tous les résultats sont affichés'
+    scrollLoading: 'Chargement en cours...'
+
   nav:
+    connect: 'Se connecter'
     index: 'Accueil'
     rankings: 'Classements'
 
-  test:
-    one: 'Salut le monde !'
-    other: 'Salut tout le monde !'
+  plh:
+    email: 'Ton email'
+    password: 'Ton mot de passe'
+
+  ttl:
+    app: 'Huby Woky'
+    deltasRanking: 'Classement par deltas'
+    generalRanking: 'Classement général'
+    logIn: 'Déjà membre ?'
+    signIn: 'Nouveau membre ?'
+    trophiesRanking: 'Classement des trophées'
+    welcome: 'Une terrible menace sommeille dans les ombres...'

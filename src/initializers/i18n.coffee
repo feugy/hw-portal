@@ -1,3 +1,5 @@
+require '../translations/fr'
+
 Ember.Application.initializer
   name: 'i18n-init',
 

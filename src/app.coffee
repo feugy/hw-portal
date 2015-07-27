@@ -8,3 +8,7 @@ Ember.Component.reopen
       @$(document).foundation 'reflow'
 
 window.App = Ember.Application.create()
+
+require './initializers/i18n'
+require './helpers'
+require './router'
