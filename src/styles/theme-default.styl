@@ -1,4 +1,5 @@
 @require 'variables'
+@require 'mixins'
 
 // Foundation overloads
 .raw
@@ -13,7 +14,6 @@
 
     .scroller
       $edge = 5rem
-      font-size 3rem
       text-align center
       width $edge
       line-height $edge
@@ -25,6 +25,11 @@
       right 5%
       margin 0
       padding 0
+
+      > i
+        font-size 3rem
+        margin 0
+        line-height auto
 
     > #slide1
       background-image url('../images/the-city-that-never-sleeps_ad-wheeler.jpg')
@@ -62,6 +67,41 @@
         background $secondary-color
         font-size 1rem
 
+
+#connect
+
+  .sign-in, .log-in
+    padding 3rem
+
+    ul
+      text-align left
+      margin 0
+
+      > li
+        list-item none
+        display inline-block
+        font-size 5rem
+        margin -2rem 1rem 0 0
+        > i
+          color $primary-color
+          cursor pointer
+
+    .row:last-child
+      text-align center
+
+  .sign-in input[type=checkbox]
+    margin-top 1rem
+
+  @media only screen and (min-width: 40.0625em)
+
+    .sign-in
+      border-left 1px solid $secondary-color
+
+  @media only screen and (min-width: 64.0625em)
+
+    .l-header
+      display none
+
 #rankings
 
   .l-header > div
@@ -75,13 +115,10 @@
   .l-panel
     display flex
     flex-direction column
-    height 100%
-    padding 0
 
   .list
     padding 1rem
     flex 1
-    overflow-y auto
     position relative
 
   .list-item

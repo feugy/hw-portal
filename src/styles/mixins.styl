@@ -7,3 +7,11 @@ vendor-prefix(rule, args...)
 
 user-select(value)
   vendor-prefix(user-select, value)
+
+placeholder(selector)
+  {selector}::-moz-placeholder
+    {block}
+  {selector}::-webkit-input-placeholder
+    {block}
+  {selector}::-ms-input-placeholder
+    {block}

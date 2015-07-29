@@ -43,6 +43,7 @@ I18n.translations.fr =
     sortByTrophies: 'par trophées'
 
   lbl:
+    confirmMajority: 'J\'ai plus de 16 ans et j\'ai lu et accepté les conditions d\'utilisation de Huby Woky'
     logIn: 'Ou utiliser ton compte Huby Woky'
     logInWith: 'Connecte toi avec'
     noResults: 'Aucun résultat'
@@ -50,6 +51,9 @@ I18n.translations.fr =
     signInWith: 'Utilise ton compte'
     scrollEnds: 'Tous les résultats sont affichés'
     scrollLoading: 'Chargement en cours...'
+
+  msg:
+    majorityNeeded: 'Si tu as moins de 16 ans, demande à tes parents de créer ton compte.'
 
   nav:
     connect: 'Se connecter'

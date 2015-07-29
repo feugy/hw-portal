@@ -5,6 +5,7 @@ body > .ember-view
 .l-main-view
 .l-panel-layout
 .l-panel-wrap
+.l-panel
   height 100%
 
 .l-parallax
@@ -48,15 +49,16 @@ body > .ember-view
     -moz-transform translateZ(-1px) scale(2)
     z-index -1
 
-.l-panel
-  padding 1em
-
 .l-nav
   display block
   text-align center
 
   > *:not(:first-child)
     margin-left 1rem
+
+.l-scrollable
+  height 100%
+  overflow-y auto
 
 .l-menu
 
@@ -85,9 +87,11 @@ body > .ember-view
 .l-header
   background-color $primary-color
   padding 0.1rem 1rem
+  max-width 100%
 
   > h2
     color $primary-inverted-color
+    font-size 1.7rem
 
 // On small screen, only display the toggle menu button
 .l-panel-wrap > .l-header
