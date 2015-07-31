@@ -14,13 +14,15 @@
         <h4>{{translate 'lbl.logIn'}}</h4>
         <form>
           <div class="row">
-            {{input class="small-12 columns" placeholder=emailPlaceholder type="email"}}
+            {{input class="small-12 columns" value=login placeholder=emailPlaceholder type="email"}}
+            {{#if loginMissing}}<small class="error">{{translate 'err.loginMissing'}}</small>{{/if}}
           </div>
           <div class="row">
-            {{input class="small-12 columns" placeholder=passwordPlaceholder type="password"}}
+            {{input class="small-12 columns" value=password placeholder=passwordPlaceholder type="password"}}
+            {{#if passwordMissing}}<small class="error">{{translate 'err.passwordMissing'}}</small>{{/if}}
           </div>
           <div class="row">
-            {{#link-to 'index' class="button"}}<i class="fi-paw"></i>{{translate 'btn.logIn'}}{{/link-to}}
+            <a class="button" href="" {{action "connect"}}><i class="fi-paw"></i>{{translate 'btn.logIn'}}</a>
           </div>
         </form>
       </div>

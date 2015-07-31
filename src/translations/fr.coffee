@@ -42,6 +42,10 @@ I18n.translations.fr =
     sortByScore: 'par score'
     sortByTrophies: 'par trophées'
 
+  err:
+    loginMissing: 'Merci d\'entrer ton email'
+    passwordMissing: 'Merci d\'entrer ton mot de passe'
+
   lbl:
     confirmMajority: 'J\'ai plus de 16 ans et j\'ai lu et accepté les conditions d\'utilisation de Huby Woky'
     logIn: 'Ou utiliser ton compte Huby Woky'
