@@ -1,3 +1,4 @@
+require '../controllers/rankings'
 require '../models/gamer'
 require '../adapters/fixtures'
 

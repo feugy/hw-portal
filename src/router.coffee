@@ -1,7 +1,6 @@
-require './routes/rankings'
 require './controllers/index'
-require './controllers/rankings'
-require './controllers/connect'
+require './routes/rankings'
+require './routes/connect'
 
 App.Router = Ember.Router.extend location: 'history'
 

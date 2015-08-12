@@ -13,9 +13,3 @@ App.ConnectController = Ember.Controller.extend
     @_super args...
     @emailPlaceholder = translator.compute 'plh.email'
     @passwordPlaceholder = translator.compute 'plh.password'
-
-  actions:
-    connect: () ->
-      @set 'loginMissing', @login?.trim().length is 0
-      @set 'passwordMissing', @password?.trim().length is 0
-      console.log 'credentials:', @login, @password
