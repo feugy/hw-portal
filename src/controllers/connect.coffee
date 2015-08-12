@@ -9,7 +9,12 @@ App.ConnectController = Ember.Controller.extend
   loginMissing: false
   passwordMissing: false
 
+  connectError: null
+
   init: (args...) ->
     @_super args...
     @emailPlaceholder = translator.compute 'plh.email'
     @passwordPlaceholder = translator.compute 'plh.password'
+
+  actions:
+    closeConnectError: -> @set 'connectError', null

@@ -7,15 +7,23 @@ App.ConnectRoute = Ember.Route.extend
 
     logWith: (provider) ->
       console.log "log with #{provider}"
-      @get('session').open(provider).then () =>
+
+      options = {}
+      if provider is 'huby-woky'
+        controller = @controllerFor 'connect'
+        loginLength = controller.login?.trim().length
+        passwordLength = controller.password?.trim().length
+        controller.set 'loginMissing', loginLength is 0 or not loginLength?
+        controller.set 'passwordMissing', passwordLength is 0 or not passwordLength?
+        options.login = controller.login
+        options.password = controller.password
+        return if controller.get('loginMissing') or controller.get 'passwordMissing'
+
+      @get('session').open(provider, options).then () =>
         # access granted: redirect to home page
         console.log @get 'session'
-      .catch (err) =>
-        # access denied: TODO display error
-        console.error err
+        @transitionTo 'index'
 
-    connect: () ->
-      controller = @controllerFor 'connect'
-      controller.set 'loginMissing', controller.login?.trim().length is 0
-      controller.set 'passwordMissing', controller.password?.trim().length is 0
-      console.log 'credentials:', controller.login, controller.password
+      .catch (err) =>
+        # access denied: display error
+        @controllerFor('connect').set 'connectError', err

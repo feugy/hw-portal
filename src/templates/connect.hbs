@@ -8,8 +8,8 @@
       <div>
         <h4>{{translate 'lbl.logInWith'}}</h4>
         <ul class="l-nav">
-          <li><a href="#" {{action 'logWith' 'github-oauth2'}}><i class="fi-social-github"></i></a></li>
-          <li><a href="#" {{action 'logWith' 'google-oauth2'}}><i class="fi-social-google-plus"></i></a></li>
+          <li><a href="#" {{action "logWith" "github-oauth2"}}><i class="fi-social-github"></i></a></li>
+          <li><a href="#" {{action "logWith" "google-oauth2"}}><i class="fi-social-google-plus"></i></a></li>
         </ul>
         <h4>{{translate 'lbl.logIn'}}</h4>
         <form>
@@ -22,7 +22,11 @@
             {{#if passwordMissing}}<small class="error">{{translate 'err.passwordMissing'}}</small>{{/if}}
           </div>
           <div class="row">
-            <a class="button" href="" {{action "connect"}}><i class="fi-paw"></i>{{translate 'btn.logIn'}}</a>
+            <div class="alert-box alert {{unless connectError 'hide'}}">
+              {{connectError}}
+              <a href="" {{action "closeConnectError"}} class="close">&times;</a>
+            </div>
+            <a class="button" href="" {{action "logWith" "huby-woky"}}><i class="fi-paw"></i>{{translate 'btn.logIn'}}</a>
           </div>
         </form>
       </div>
@@ -33,8 +37,8 @@
       <div>
         <h4>{{translate 'lbl.signInWith'}}</h4>
         <ul class="l-nav">
-          <li><a href="#" {{action 'logWith' 'github-oauth2'}}><i class="fi-social-github"></i></a></li>
-          <li><a href="#" {{action 'logWith' 'google-oauth2'}}><i class="fi-social-google-plus"></i></a></li>
+          <li><a href="#" {{action "logWith" "github-oauth2"}}><i class="fi-social-github"></i></a></li>
+          <li><a href="#" {{action "logWith" "google-oauth2"}}><i class="fi-social-google-plus"></i></a></li>
         </ul>
         <h4>{{translate 'lbl.signIn'}}</h4>
         <form>
