@@ -11,17 +11,12 @@ App.ConnectRoute = Ember.Route.extend
       options = {}
       if provider is 'huby-woky'
         controller = @controllerFor 'connect'
-        loginLength = controller.login?.trim().length
-        passwordLength = controller.password?.trim().length
-        controller.set 'loginMissing', loginLength is 0 or not loginLength?
-        controller.set 'passwordMissing', passwordLength is 0 or not passwordLength?
-        options.login = controller.login
-        options.password = controller.password
-        return if controller.get('loginMissing') or controller.get 'passwordMissing'
+        return unless controller.logIn.valid
+        options.login = controller.logIn.login
+        options.password = controller.logIn.password
 
       @get('session').open(provider, options).then () =>
         # access granted: redirect to home page
-        console.log @get 'session'
         @transitionTo 'index'
 
       .catch (err) =>

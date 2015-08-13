@@ -45,14 +45,14 @@ I18n.translations.fr =
   err:
     loginMissing: 'Merci d\'entrer ton email'
     passwordMissing: 'Merci d\'entrer ton mot de passe'
+    passwordConfirmDiffers: 'Confirme de nouveau ton mot de passe'
 
   lbl:
     confirmMajority: 'J\'ai plus de 16 ans et j\'ai lu et accepté les conditions d\'utilisation de Huby Woky'
     logIn: 'Ou utiliser ton compte Huby Woky'
     logInWith: 'Connecte toi avec'
     noResults: 'Aucun résultat'
-    signIn: 'Ou crée ton compte Huby Woky'
-    signInWith: 'Utilise ton compte'
+    signIn: 'Crée ton compte Huby Woky'
     scrollEnds: 'Tous les résultats sont affichés'
     scrollLoading: 'Chargement en cours...'
 
@@ -67,6 +67,7 @@ I18n.translations.fr =
   plh:
     email: 'Ton email'
     password: 'Ton mot de passe'
+    passwordConfirm: 'Confirme ton mot de passe'
 
   ttl:
     app: 'Huby Woky'
