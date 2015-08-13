@@ -1,6 +1,11 @@
 # Features
 
-- manual connect on server
+- logout button
+- local-storage session
+- user details in aside
+- aside nav icons
+- home
+- user sign-in
 
 # Industrialization
 

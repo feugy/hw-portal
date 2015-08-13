@@ -10,9 +10,16 @@
     {{#link-to 'index' class="l-title nav-link" tagName="div"}}
       <h2>{{translate 'ttl.app'}}</h2>
       <img src="http://placehold.it/200x200">
+      {{#if user}}
+        <div class="user-overlay">
+          <h4>{{user.pseudo}}</h4>
+        </div>
+      {{/if}}
     {{/link-to}}
     <ul class="off-canvas-list">
-      <li>{{#link-to 'connect' class="nav-link"}}{{translate 'nav.connect'}}{{/link-to}}</li>
+      {{#unless user}}
+        <li>{{#link-to 'connect' class="nav-link"}}{{translate 'nav.connect'}}{{/link-to}}</li>
+      {{/unless}}
       <li>{{#link-to 'rankings' class="nav-link"}}{{translate 'nav.rankings'}}{{/link-to}}</li>
     </ul>
   </aside>

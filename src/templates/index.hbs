@@ -31,7 +31,9 @@
         eu felis.
       </p>
       <nav class="l-nav">
-        {{#link-to 'connect' class='icon-link'}}<i class="fi-paw"></i><label>{{translate 'nav.connect'}}</label>{{/link-to}}
+        {{#unless user}}
+          {{#link-to 'connect' class='icon-link'}}<i class="fi-paw"></i><label>{{translate 'nav.connect'}}</label>{{/link-to}}
+        {{/unless}}
         {{#link-to 'rankings' class='icon-link'}}<i class="fi-list-thumbnails"></i><label>{{translate 'nav.rankings'}}</label>{{/link-to}}
       </nav>
     </div>

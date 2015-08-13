@@ -72,6 +72,8 @@ App.ConnectController = Ember.Controller.extend
     @passwordPlaceholder = translator.compute 'plh.password'
     @passwordConfirmPlaceholder = translator.compute 'plh.passwordConfirm'
 
+    # Because of their cyclic nature, checkLogIn and checkSignIn must be manually
+    # wired and unwired, and not use Ember.run.Once to keep their synchronism
     @addObserver event, @, @checkLogIn for event in logInEvents
     @addObserver event, @, @checkSignIn for event in signInEvents
 

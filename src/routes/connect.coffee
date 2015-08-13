@@ -3,6 +3,9 @@ require '../adapters/auth'
 
 App.ConnectRoute = Ember.Route.extend
 
+  beforeModel: ->
+    @transitionTo 'index' if @get 'session.isAuthenticated'
+
   actions:
 
     logWith: (provider) ->

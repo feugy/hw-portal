@@ -1,8 +1,8 @@
-{{#panel-layout}}
+{{#panel-layout session=session}}
   <header class="l-header row">
     <h2 class="small-8 column">{{translate currentSort.title}}</h2>
     <div class="small-4 column">
-      <button data-dropdown="sort-dropdown" class="button dropdown">{{translate currentSort.label}}</button>
+      <button data-dropdown="sort-dropdown" class="button tiny dropdown">{{translate currentSort.label}}</button>
       <ul id="sort-dropdown" data-dropdown-content class="f-dropdown">
       {{#each sortCriteria as |sort|}}
         <li>{{#link-to 'rankings' (query-params sort=sort.field)}}{{translate sort.label}}{{/link-to}}</li>

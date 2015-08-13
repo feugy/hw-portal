@@ -1,5 +1,11 @@
 App.IndexController = Ember.Controller.extend
 
+  user: null
+
+  refreshUser: ( ->
+    @set 'user', @session?.content?.currentUser
+  ).observes('session.content.currentUser').on 'init'
+
   actions:
 
     # Scrolls to a particular target within the parallax element
