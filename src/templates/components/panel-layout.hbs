@@ -7,15 +7,19 @@
   </header>
 
   <aside id="left-menu" class="left-off-canvas-menu l-menu">
-    {{#link-to 'index' class="l-title nav-link" tagName="div"}}
-      <h2>{{translate 'ttl.app'}}</h2>
-      <img src="http://placehold.it/200x200">
+    <div class="l-title nav-link">  tagName="div"}}
+      {{#link-to 'index' tagName="h2"}}{{translate 'ttl.app'}}{{/link-to}}
+      {{#link-to 'index' tagName="div"}}<img src="http://placehold.it/200x200">{{/link-to}}
       {{#if user}}
         <div class="user-overlay">
-          <h4>{{user.pseudo}}</h4>
+          <h4 class="pseudo">{{user.pseudo}}</h4>
+          <div class="switch tiny logout">
+            {{input id="logout" type="checkbox" checked=isLogout}}
+            <label for="logout"></label>
+          </div>
         </div>
       {{/if}}
-    {{/link-to}}
+    </div>
     <ul class="off-canvas-list">
       {{#unless user}}
         <li>{{#link-to 'connect' class="nav-link"}}{{translate 'nav.connect'}}{{/link-to}}</li>

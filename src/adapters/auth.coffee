@@ -16,6 +16,12 @@ App.ApplicationToriiAdapter = Ember.Object.extend
     .then (response) ->
       currentUser: response.user
 
+  # Closes the session
+  close: ->
+    return new Ember.RSVP.Promise (resolve, reject) ->
+      console.log 'session closed'
+      resolve()
+
 # Provider for huby-woky authentication
 App.HubyWokyToriiProvider = Ember.Object.extend
 
@@ -35,3 +41,4 @@ App.HubyWokyToriiProvider = Ember.Object.extend
           data.provider = 'huby-woky'
           resolve data
         error: (xhr, status, err) -> reject err
+

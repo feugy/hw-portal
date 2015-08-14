@@ -1,6 +1,5 @@
 # Features
 
-- logout button
 - local-storage session
 - user details in aside
 - aside nav icons

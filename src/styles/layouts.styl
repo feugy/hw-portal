@@ -70,11 +70,25 @@ body > .ember-view
 
     > .user-overlay
       position absolute
-      top 225px
-      left 2rem
+      top 252px
+      left 1.5rem
+      width 200px
+      text-align left
 
-      > h4
+      > *
+        display inline-block
+        margin 0
+
+      > .pseudo
         color $primary-inverted-color
+        padding 0 0.5rem
+        width 63%
+        text-overflow ellipsis
+        overflow hidden
+
+      > .logout
+        bottom 4px
+
 
   .nav-link.active, .nav-link.active:hover
     position relative
