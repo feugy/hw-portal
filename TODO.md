@@ -1,7 +1,5 @@
 # Features
 
-- user details in aside
-- aside nav icons
 - home
 - user sign-in
 

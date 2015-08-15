@@ -17,4 +17,3 @@ require './initializers/i18n'
 require './initializers/auth'
 require './helpers'
 require './router'
-
