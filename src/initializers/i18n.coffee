@@ -1,7 +1,7 @@
 require '../translations/fr'
 
 Ember.Application.initializer
-  name: 'i18n-init',
+  name: 'i18n-init'
 
   initialize: ->
     I18n.fallbacks = true

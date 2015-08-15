@@ -1,24 +1,41 @@
+
+storageKey = 'torii.authent'
+
 # Session adapter: transfer the authentication provider's token to get
 # in return the current user.
+#
+# Freely inspired from http://www.sitepoint.com/twitter-authentication-ember-js-torii/
 App.ApplicationToriiAdapter = Ember.Object.extend
 
-  # Ask server for the current user
+  # Tries to authenticate user with a given provided
+  # A brand new session will be created, and authentication data stored into local storage
   #
   # @param {Object} authentication - authentication provider's data
   # @param {String} authentication.token - authorization token
   # @param {String} authentication.provider - provider's name
   # @return {Promise} resolved with the currentUser object
   open: (authentication) ->
-    # TODO send autorization code to server to get real user
-    provider = authentication.provider.replace '-oauth2', ''
+    localStorage.setItem storageKey, JSON.stringify authentication
+    @fetch()
+
+  # Used to validate an existing session from the local storage, if available
+  #
+  # @return {Promise} resolved with the currentUser object
+  fetch: ->
     new Ember.RSVP.Promise (resolve, reject) ->
+      return reject() unless localStorage.getItem storageKey
+      authentication = JSON.parse localStorage.getItem storageKey
+      provider = authentication.provider.replace '-oauth2', ''
+
+      # TODO send autorization code to server to get real user
       Ember.$.getJSON('/data/current-user.json', provider: provider).done(resolve).fail reject
-    .then (response) ->
+    .then (response) =>
       currentUser: response.user
 
-  # Closes the session
+  # Closes the session, cleaning local storage
   close: ->
     return new Ember.RSVP.Promise (resolve, reject) ->
+      localStorage.removeItem storageKey
       console.log 'session closed'
       resolve()
 

@@ -1,6 +1,5 @@
 # Features
 
-- local-storage session
 - user details in aside
 - aside nav icons
 - home

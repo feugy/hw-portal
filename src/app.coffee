@@ -14,6 +14,7 @@ require './config/auth'
 window.App = Ember.Application.create()
 
 require './initializers/i18n'
+require './initializers/auth'
 require './helpers'
 require './router'
 
