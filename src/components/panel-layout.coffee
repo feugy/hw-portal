@@ -1,3 +1,10 @@
+require '../models/stats'
+
+# Displays responsive navigation side panels
+# As it will be in every pages, this component fetch it's own data, except session
+#
+# http://discuss.emberjs.com/t/how-to-make-ember-component-fetch-data-from-server-put-ajax-call-
+# inside-the-component-seems-not-a-good-practise-to-handle-this/6984/13
 App.PanelLayoutComponent = Ember.Component.extend
 
   classNames: 'off-canvas-wrap l-panel-layout'
@@ -8,6 +15,9 @@ App.PanelLayoutComponent = Ember.Component.extend
 
   # Logout checker
   isLogout: false
+
+  # General statistics displayed
+  stats: null
 
   # On session changes, refresh user
   refreshUser: ( ->
@@ -22,3 +32,8 @@ App.PanelLayoutComponent = Ember.Component.extend
   # Foundation's off-canvas component
   attributeBindings: ['offCanvas:data-offcanvas']
   offCanvas: true
+
+  init: (args...) ->
+    @_super args...
+    @get('targetObject.store').find('stats').then (stats) =>
+      @set 'stats', stats.objectAt 0

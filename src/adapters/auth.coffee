@@ -30,7 +30,9 @@ App.ApplicationToriiAdapter = Ember.Object.extend
       # TODO send autorization code to server to get real user
       Ember.$.getJSON('/data/current-user.json', provider: provider).done(resolve).fail reject
     .then (response) =>
-      currentUser: response.user
+      store = @get 'store'
+      user = store.createRecord 'gamer', response.user
+      currentUser: user
 
   # Closes the session, cleaning local storage
   close: ->
@@ -58,4 +60,3 @@ App.HubyWokyToriiProvider = Ember.Object.extend
           data.provider = 'huby-woky'
           resolve data
         error: (xhr, status, err) -> reject err
-

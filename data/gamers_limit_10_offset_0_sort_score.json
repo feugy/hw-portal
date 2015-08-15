@@ -1,15 +1,18 @@
 {
   "gamer": [{
+    "id": 4,
     "pseudo": "Dorian",
     "deltaCount": 35,
     "trophyCount": 105,
     "score": 10582
   }, {
+    "id": 3,
     "pseudo": "Coralie",
     "deltaCount": 54,
     "trophyCount": 100,
     "score": 10500
   }, {
+    "id": 5,
     "pseudo": "Kévin",
     "deltaCount": 25,
     "trophyCount": 105,
@@ -20,6 +23,7 @@
     "trophyCount": 87,
     "score": 10003
   }, {
+    "id": 1,
     "pseudo": "Dorine",
     "deltaCount": 68,
     "trophyCount": 85,

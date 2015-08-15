@@ -9,7 +9,7 @@ Ember.Application.initializer
     session = container.lookup 'torii:session'
     session.fetch()
       .then (data) ->
-        console.log "#{session.content?.currentUser?.pseudo} re-authentified"
+        console.log "#{session.content?.currentUser?.get 'pseudo'} re-authentified"
       .catch (err) ->
         # just listen to error to avoid bubbling
         console.log 'no session to restore', err?.message or err

@@ -20,8 +20,13 @@
         </div>
       {{/if}}
     </div>
-    {{#if user}}
+    {{#unless user}}
+    <ul class="off-canvas-list">
+      <li>{{#link-to 'connect' class="nav-link"}}<i class="symbol fi-paw"></i>{{translate 'nav.connect'}}{{/link-to}}</li>
+    </ul>
+    {{/unless}}
     <div class="l-menu-stats">
+      {{#if user}}
       <ul class="small-block-grid-2">
         <li>{{user.score}}</li><li><i class="symbol fi-sheriff-badge"></i></li>
       </ul>
@@ -31,12 +36,16 @@
       <ul class="small-block-grid-2">
         <li>{{user.trophyCount}}</li><li><i class="symbol fi-trophy"></i></li>
       </ul>
+      {{else}}
+      <ul class="small-block-grid-2">
+        <li>{{stats.playerCount}}</li><li><i class="symbol fi-torsos-all"></i></li>
+      </ul>
+      <ul class="small-block-grid-2">
+        <li>{{stats.deltaCount}}</li><li><i class="symbol fi-delta"></i></li>
+      </ul>
+      {{/if}}
     </div>
-    {{/if}}
     <ul class="off-canvas-list">
-      {{#unless user}}
-        <li>{{#link-to 'connect' class="nav-link"}}<i class="symbol fi-paw"></i>{{translate 'nav.connect'}}{{/link-to}}</li>
-      {{/unless}}
       <li>{{#link-to 'rankings' class="nav-link"}}<i class="symbol fi-list-thumbnails"></i>{{translate 'nav.rankings'}}{{/link-to}}</li>
     </ul>
   </aside>
