@@ -19,9 +19,13 @@ App.PanelLayoutComponent = Ember.Component.extend
   # General statistics displayed
   stats: null
 
+  # Link to home, depending on connection state
+  homeLink: 'index'
+
   # On session changes, refresh user
   refreshUser: ( ->
     @set 'user', @session?.content?.currentUser
+    @set 'homeLink', if @get('user')? then 'home' else 'index'
   ).observes('session.content.currentUser').on 'init'
 
   # On logout change, performs logout

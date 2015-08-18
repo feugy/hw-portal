@@ -1,0 +1,40 @@
+{
+  "rank": {
+    "current": 1,
+    "total": 752
+  },
+  "challenges": [{
+    "id": "level-up",
+    "points": 500,
+    "limit": 1427281200000
+  }],
+  "activities": [{
+    "kind": "challenge-completed",
+    "date": 1423990800000,
+    "points": 1500,
+    "details": {
+      "id": "hunter"
+    }
+  }, {
+    "kind": "delta-won",
+    "date": 1423911600000,
+    "points": 300,
+    "details": {
+      "deltas": [
+        "b97b64d7-0c71-49a6-a2e7-b62f7d198e5f",
+        "659d8f54-06f1-4b9f-846f-c9c798ce7ba7",
+        "ddeebc41-9fac-4101-8fc5-688fcdcd0f64"
+      ]
+    }
+  }, {
+    "kind": "delta-lost",
+    "date": 1423753200000,
+    "points": -200,
+    "details": {
+      "deltas": [
+        "2a7866f2-72c8-4318-8e15-592fbff9133a",
+        "4978dc99-5744-4e04-a00d-113d060ce536"
+      ]
+    }
+  }]
+}

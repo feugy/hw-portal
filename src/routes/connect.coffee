@@ -20,7 +20,7 @@ App.ConnectRoute = Ember.Route.extend
 
       @get('session').open(provider, options).then () =>
         # access granted: redirect to home page
-        @transitionTo 'index'
+        @transitionTo 'home'
 
       .catch (err) =>
         # access denied: display error

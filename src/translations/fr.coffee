@@ -48,9 +48,14 @@ I18n.translations.fr =
     passwordConfirmDiffers: 'Confirme de nouveau ton mot de passe'
 
   lbl:
+    challengeLimit: 'Limite : '
+    challengePointGain: '+ {{points} pts'
+    activityPoints: '{{points} pts'
     confirmMajority: 'J\'ai plus de 16 ans et j\'ai lu et accepté les conditions d\'utilisation de Huby Woky'
     logIn: 'Ou utiliser ton compte Huby Woky'
     logInWith: 'Connecte toi avec'
+    noActivity: 'Il était temps que tu reviennes !'
+    noChallenge: 'Tout va bien, continue comme ça.'
     noResults: 'Aucun résultat'
     signIn: 'Crée ton compte Huby Woky'
     scrollEnds: 'Tous les résultats sont affichés'
@@ -61,7 +66,7 @@ I18n.translations.fr =
 
   nav:
     connect: 'Se connecter'
-    index: 'Accueil'
+    home: 'Accueil'
     rankings: 'Classements'
 
   plh:
@@ -73,7 +78,30 @@ I18n.translations.fr =
     app: 'Huby Woky'
     deltasRanking: 'Classement par deltas'
     generalRanking: 'Classement général'
+    home: 'Heureux de te revoir {{pseudo}} !'
     logIn: 'Déjà membre ?'
+    newChallenge: 'Nouveau challenge : {{name}} !'
+    recentActivity: 'Activité récente'
     signIn: 'Nouveau membre ?'
     trophiesRanking: 'Classement des trophées'
     welcome: 'Une terrible menace sommeille dans les ombres...'
+
+  challenges:
+    'level-up':
+      name: 'Level up'
+      details: 'Améliore de 5 places ta position dans le classement général'
+      icon: 'arrow-up'
+    hunter:
+      name: 'Chasseur'
+      details: 'Récupère tous les animaux de la jungle'
+      icon: 'target'
+
+  activities:
+    'delta-won':
+      name: 'Nouveaux deltas'
+      icon: 'delta'
+    'delta-lost':
+      name: 'Deltas perdus'
+      icon: 'delta'
+    'challenge-completed':
+      icon: 'trophy'
