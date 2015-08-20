@@ -1,0 +1,12 @@
+{{#panel-layout session=session}}
+  <header class="l-header row">
+    <h2 class="small-8 column">{{translate 'nav.challenges'}}</h2>
+  </header>
+  <div class="l-scrollable">
+    <ul class="l-flow-grid">
+    {{#each model as |challenge|}}
+      {{display-challenge model=challenge}}
+    {{/each}}
+    </ul>
+  </div>
+{{/panel-layout}}

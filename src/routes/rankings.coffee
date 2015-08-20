@@ -1,6 +1,5 @@
 require '../controllers/rankings'
 require '../models/gamer'
-require '../adapters/fixtures'
 
 App.RankingsRoute = Ember.Route.extend
 
@@ -65,6 +64,8 @@ App.RankingsRoute = Ember.Route.extend
         @hasMore = total > offset + limit
         models.set 'ended', true unless @hasMore
         models
-      .then (models) -> new Ember.RSVP.Promise (resolve) -> Ember.run.later (-> resolve models), 500
+      .then (models) -> new Ember.RSVP.Promise (resolve) ->
+        # delay to simulate server latency
+        Ember.run.later (-> resolve models), 500
       .catch (err) -> console.error 'failed to fetch gamers: ', err
       .finally => @loading = false

@@ -21,8 +21,8 @@
     {{/each}}
     <h3 class="secondary-title">{{translate 'ttl.recentActivity'}}</h3>
     <ul class="list">
-    {{#each activities as |model|}}
-      {{display-activity activity=model}}
+    {{#each activities as |activity|}}
+      {{display-activity model=activity}}
     {{else}}
       <li class="list-item">{{translate 'lbl.noActivity'}}</li>
     {{/each}}

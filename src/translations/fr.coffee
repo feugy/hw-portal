@@ -65,6 +65,7 @@ I18n.translations.fr =
     majorityNeeded: 'Si tu as moins de 16 ans, demande à tes parents de créer ton compte.'
 
   nav:
+    challenges: 'Mes challenges'
     connect: 'Se connecter'
     home: 'Accueil'
     rankings: 'Classements'
@@ -76,6 +77,7 @@ I18n.translations.fr =
 
   ttl:
     app: 'Huby Woky'
+    challenges: 'Challenges'
     deltasRanking: 'Classement par deltas'
     generalRanking: 'Classement général'
     home: 'Heureux de te revoir {{pseudo}} !'
@@ -87,14 +89,50 @@ I18n.translations.fr =
     welcome: 'Une terrible menace sommeille dans les ombres...'
 
   challenges:
+    'first-prey':
+      name: 'Première proie'
+      details: 'Capture un de delta appartenant à un autre joueur'
+      icon: 'asterisk'
+    'come-back':
+      name: 'De retour'
+      details: 'Récupère un detla que tu avais perdu'
+      icon: 'refresh'
     'level-up':
       name: 'Level up'
       details: 'Améliore de 5 places ta position dans le classement général'
       icon: 'arrow-up'
+    'complete-set':
+      name: 'Enfin complet...'
+      details: 'Récupère tous les delta d\'un set'
+      icon: 'arrows-compress'
+    'complete-scene':
+      name: 'Ils sont tous là'
+      details: 'Récupère tous les delta d\'un scene'
+      icon: 'arrows-in'
+    'double-set':
+      name: 'Jumeaux'
+      details: 'Possède tous les delta d\'un même set en double'
+      icon: 'page-copy'
+    'double-scene':
+      name: 'Multitude'
+      details: 'Possède tous les delta d\'un même scene en double'
+      icon: 'page-multiple'
     hunter:
       name: 'Chasseur'
       details: 'Récupère tous les animaux de la jungle'
       icon: 'target'
+    killer:
+      name: 'Tueur'
+      details: 'Récupère 12 delta d\'un même joueur dans la journée'
+      icon: 'torso'
+    'serial-killer':
+      name: 'Tueur en série'
+      details: 'Récupère 12 delta de trois joueurs dans la journée'
+      icon: 'torsos-all'
+    jungle:
+      name: 'Maitre de la jungle'
+      details: 'Possède tous les delta de la scène "Jungle"'
+      icon: 'trees'
 
   activities:
     'delta-won':

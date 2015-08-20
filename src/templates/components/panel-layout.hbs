@@ -46,6 +46,9 @@
       {{/if}}
     </div>
     <ul class="off-canvas-list">
+      {{#if user}}
+        <li>{{#link-to 'challenges' class="nav-link"}}<i class="symbol fi-trophy"></i>{{translate 'nav.challenges'}}{{/link-to}}</li>
+      {{/if}}
       <li>{{#link-to 'rankings' class="nav-link"}}<i class="symbol fi-list-thumbnails"></i>{{translate 'nav.rankings'}}{{/link-to}}</li>
     </ul>
   </aside>

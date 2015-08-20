@@ -91,3 +91,33 @@
     color $primary-inverted-color
     text-align center
 
+.challenge-card
+  padding 1rem
+  text-align center
+
+  > .content
+    width 10rem
+    display inline-block
+    border 2px solid $primary-color
+    background-color $main-bg-color
+    color $primary-color
+    position relative
+    isolation isolate
+
+    .icon
+      font-size 6rem
+
+    > .overlay
+      position absolute
+      top 0
+      left 0
+      bottom 0
+      background-color rgba($secondary-color ,0.5)
+
+    > .overlay.blend
+      mix-blend-mode difference
+      background-color $primary-inverted-color
+
+    +ifIE()
+      > .overlay.blend
+        display none !important

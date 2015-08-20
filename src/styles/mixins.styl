@@ -15,3 +15,7 @@ placeholder(selector)
     {block}
   {selector}::-ms-input-placeholder
     {block}
+
+ifIE()
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active)
+    {block}

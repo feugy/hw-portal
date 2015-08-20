@@ -4,20 +4,20 @@ App.DisplayActivityComponent = Ember.Component.extend
 
   tagName: 'li'
   classNames: 'activity list-item'
-  activity: null
+  model: null
   icon: null
   name: null
   pointsLabel: null
 
   computeName: ( ->
-    return unless @activity?
-    if @activity.kind is 'challenge-completed'
-      @set 'name', translator.compute "challenges.#{@activity.details.id}.name"
+    return unless @model?
+    if @model.kind is 'challenge-completed'
+      @set 'name', translator.compute "challenges.#{@model.details.id}.name"
     else
-      @set 'name', translator.compute "activities.#{@activity.kind}.name"
-    @set 'icon', translator.compute "activities.#{@activity.kind}.icon"
+      @set 'name', translator.compute "activities.#{@model.kind}.name"
+    @set 'icon', translator.compute "activities.#{@model.kind}.icon"
     count = 1
-    if @activity.details?.deltas?.length
-      count = (if @activity.kind is 'delta-lost' then -1 else 1) * @activity.details.deltas.length
+    if @model.details?.deltas?.length
+      count = (if @model.kind is 'delta-lost' then -1 else 1) * @model.details.deltas.length
     @set 'count', count
-  ).observes('activity').on 'init'
+  ).observes('model').on 'init'
