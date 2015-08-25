@@ -48,6 +48,7 @@ I18n.translations.fr =
     passwordConfirmDiffers: 'Confirme de nouveau ton mot de passe'
 
   lbl:
+    challengeEarned: 'obtenu le '
     challengeLimit: 'Limite : '
     challengePointGain: '+ {{points} pts'
     activityPoints: '{{points} pts'
