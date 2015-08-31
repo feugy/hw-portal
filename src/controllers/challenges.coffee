@@ -1,23 +1,22 @@
-
 require '../components/display-challenge'
 require '../components/details-panel'
 translate = new (require '../helpers/translate')().compute
 
 App.ChallengesController = Ember.Controller.extend
 
-  queryParams: ['current']
-  current: null
+  queryParams: ['shown']
+  shown: null
 
   # Currently selected challenge, for right panel displayal
-  selected: Ember.computed 'model', 'current',
+  selected: Ember.computed 'model', 'shown',
     get: ->
-      return null unless @current? and @model?
-      selected = @model.find (challenge) => @current is challenge.get 'id'
+      return null unless @shown? and @model?
+      selected = @model.find (challenge) => @shown is challenge.get 'id'
       @updateDetails selected
       selected
 
     set: (key, selected) ->
-      @set 'current', selected?.get('id') or null
+      @set 'shown', selected?.get('id') or null
       @updateDetails selected
       selected
 
