@@ -155,3 +155,26 @@ body > .ember-view
   display inline-block
   vertical-align top
 
+.l-details-panel
+  height 100%
+
+  > .inner-wrap
+    transition all 300ms
+    height 100%
+
+    > .l-main
+      height 100%
+
+    > .l-details
+      padding 1rem
+      background-color $third-color
+
+      > .l-title
+        margin -1rem -1rem 1rem
+        padding 0.3rem 0.5rem 0.6rem
+        font-size 1.7rem
+        background-color $secondary-color
+        color $secondary-inverted-color
+
+        > .close
+          color $secondary-inverted-color

@@ -1,13 +1,13 @@
 # Features
 
-- challenge category
-- challenge details popup (on click/hover)
-
+- route update on details opening/updating
+- nav to challenge from home page
 - redirect to home after log-out
 
 - my collection
 - account
 - sign-in
+- challenge category
 
 # Industrialization
 

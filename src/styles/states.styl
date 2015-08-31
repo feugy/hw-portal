@@ -29,8 +29,25 @@ for selector in 'button.disabled' 'button[disabled]' '.button.disabled' '.button
 
 .challenge-card
 
+  &.selected .content
+    transition all 300ms
+    box-shadow 0 0.5rem 1rem $shadow-color
+
   .overlay
     transition right 1s
+
+.l-details-panel.move-left
+  wrapWidth = 70%
+
+  > .inner-wrap
+    transform none
+    padding-right 100% - wrapWidth
+
+  .l-details
+    left wrapWidth
+    right 0
+    width auto
+    transform none
 
 // Main layout is to always display off-canvas's left menu
 // Therefore we must cancel foundation's off-canvas behaviour

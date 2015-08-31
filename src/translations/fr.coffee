@@ -78,6 +78,7 @@ I18n.translations.fr =
 
   ttl:
     app: 'Huby Woky'
+    challengeDetails: 'Détails'
     challenges: 'Challenges'
     deltasRanking: 'Classement par deltas'
     generalRanking: 'Classement général'

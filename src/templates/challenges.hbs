@@ -1,12 +1,23 @@
 {{#panel-layout session=session}}
-  <header class="l-header row">
-    <h2 class="small-8 column">{{translate 'nav.challenges'}}</h2>
-  </header>
-  <div class="l-scrollable">
-    <ul class="l-flow-grid">
-    {{#each model as |challenge|}}
-      {{display-challenge model=challenge}}
-    {{/each}}
-    </ul>
-  </div>
+  {{#details-panel open=selected as |layout|}}
+    {{#if layout.isDetails}}
+      <h3>{{title}}</h3>
+      <div class='content'>{{details}}</div>
+      <div class='earned'>{{translate 'lbl.challengeEarned'}}{{date-time selected.earned}}</div>
+      <div class='points right' >{{translate 'lbl.activityPoints' points=selected.points}}</div>
+    {{else if layout.isTitle}}
+      {{translate 'ttl.challengeDetails'}}
+    {{else}}
+      <header class="l-header row">
+        <h2 class="small-8 column">{{translate 'nav.challenges'}}</h2>
+      </header>
+      <div class="l-scrollable">
+        <ul class="l-flow-grid">
+        {{#each model as |challenge|}}
+          {{display-challenge model=challenge selected=selected action="select"}}
+        {{/each}}
+        </ul>
+      </div>
+    {{/if}}
+  {{/details-panel}}
 {{/panel-layout}}
