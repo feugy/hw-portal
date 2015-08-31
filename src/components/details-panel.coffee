@@ -21,7 +21,7 @@ App.DetailsPanelComponent = Ember.Component.extend
   actions:
     # On close button, force details to hide
     close: () ->
-      @set 'open', false
+      @set 'open', null
       @toggle()
 
   # Effectively apply isOpen value to Fondation's off-canvas component

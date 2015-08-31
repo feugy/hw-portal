@@ -1,6 +1,5 @@
 require '../models/challenge'
 require '../controllers/challenges'
-require '../components/display-challenge'
 
 App.ChallengesRoute = Ember.Route.extend
 
