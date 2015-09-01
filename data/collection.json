@@ -1,0 +1,12 @@
+{
+  "deltas": [{
+    "id": "000000000001",
+    "kind": "garbage-bin"
+  }, {
+    "id": "000000000002",
+    "kind": "garbage-bin"
+  }, {
+    "id": "000000000003",
+    "kind": "lighter"
+  }]
+}

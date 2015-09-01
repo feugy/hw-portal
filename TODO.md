@@ -1,6 +1,5 @@
 # Features
 
-- nav to challenge from home page
 - redirect to home after log-out
 
 - my collection

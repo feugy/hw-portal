@@ -66,7 +66,8 @@ I18n.translations.fr =
     majorityNeeded: 'Si tu as moins de 16 ans, demande à tes parents de créer ton compte.'
 
   nav:
-    challenges: 'Mes challenges'
+    challenges: 'Tes challenges'
+    collection: 'Ta collection'
     connect: 'Se connecter'
     home: 'Accueil'
     rankings: 'Classements'
@@ -79,6 +80,7 @@ I18n.translations.fr =
   ttl:
     app: 'Huby Woky'
     challengeDetails: 'Détails'
+    collectionDetails: 'Détails'
     challenges: 'Challenges'
     deltasRanking: 'Classement par deltas'
     generalRanking: 'Classement général'
@@ -89,6 +91,27 @@ I18n.translations.fr =
     signIn: 'Nouveau membre ?'
     trophiesRanking: 'Classement des trophées'
     welcome: 'Une terrible menace sommeille dans les ombres...'
+
+  deltas:
+    'torch-light':
+      name: 'Lampe torche'
+      details: 'Avec cette lampe torche, il est possible d\'explorer les endroits les plus sombres.'
+    'lighter':
+      name: 'Briquet'
+      details: 'La lumière du briquet est faiblarde, mais toujours la bienvenue'
+    'garbage-lid':
+      name: 'Couvercle de poubelle'
+      details: 'Un bouclier rudimentaire. Toujours mieux que rien'
+
+  activities:
+    'delta-won':
+      name: 'Nouveaux deltas'
+      icon: 'delta'
+    'delta-lost':
+      name: 'Deltas perdus'
+      icon: 'delta'
+    'challenge-completed':
+      icon: 'trophy'
 
   challenges:
     'first-prey':
@@ -135,13 +158,3 @@ I18n.translations.fr =
       name: 'Maitre de la jungle'
       details: 'Possède tous les delta de la scène "Jungle"'
       icon: 'trees'
-
-  activities:
-    'delta-won':
-      name: 'Nouveaux deltas'
-      icon: 'delta'
-    'delta-lost':
-      name: 'Deltas perdus'
-      icon: 'delta'
-    'challenge-completed':
-      icon: 'trophy'

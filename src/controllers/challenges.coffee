@@ -1,39 +1,24 @@
 require '../components/display-challenge'
 require '../components/details-panel'
-translate = new (require '../helpers/translate')().compute
 
 App.ChallengesController = Ember.Controller.extend
 
-  queryParams: ['shown']
-  shown: null
-
   # Currently selected challenge, for right panel displayal
-  selected: Ember.computed 'model', 'shown',
-    get: ->
-      return null unless @shown? and @model?
-      selected = @model.find (challenge) => @shown is challenge.get 'id'
-      @updateDetails selected
-      selected
+  selected: null
 
-    set: (key, selected) ->
-      @set 'shown', selected?.get('id') or null
-      @updateDetails selected
-      selected
-
-  # Because selected title and details are translated with a parametrized info,
-  # we must get them manually in the controller
-  title: null
-  details: null
-
-  updateDetails: (selected) ->
-    if selected?
-      @set 'title', translate "challenges.#{selected.id}.name"
-      @set 'details', translate "challenges.#{selected.id}.details"
+  # When the selected challenge is reseted to null, return back to challenges route
+  # The transition to details route must only be performed in the select action
+  # Do not performs on init, because we must wait for Challenges.Details route
+  # to set this value
+  updateSelected: (->
+    @transitionToRoute 'challenges' unless @selected?
+  ).observes 'selected'
 
   actions:
 
     # Set currently selected challenge: change if different from previous,
     # or reinit to null if toggleing the same challenge.
+    # Transition to the selected challenge details
     #
     # @param {Object} challenge - newly selected challenge.
     select: (challenge) ->
@@ -42,3 +27,4 @@ App.ChallengesController = Ember.Controller.extend
         @set 'selected', null
       else
         @set 'selected', challenge
+        @transitionToRoute 'challenges.details', challenge.id if challenge?

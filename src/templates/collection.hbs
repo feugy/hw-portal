@@ -3,15 +3,15 @@
     {{#if layout.isDetails}}
       {{outlet}}
     {{else if layout.isTitle}}
-      {{translate 'ttl.challengeDetails'}}
+      {{translate 'ttl.collectionDetails'}}
     {{else}}
       <header class="l-header row">
-        <h2 class="small-8 column">{{translate 'nav.challenges'}}</h2>
+        <h2 class="small-8 column">{{translate 'nav.collection'}}</h2>
       </header>
       <div class="l-scrollable">
-        <ul class="l-flow-grid">
-        {{#each model as |challenge|}}
-          {{display-challenge model=challenge selected=selected action="select"}}
+        <ul>
+        {{#each model.deltas as |delta|}}
+          <li {{action "select" delta}}>{{delta.kind}}</li>
         {{/each}}
         </ul>
       </div>

@@ -1,4 +1,3 @@
-
 storageKey = 'torii.authent'
 
 # Session adapter: transfer the authentication provider's token to get

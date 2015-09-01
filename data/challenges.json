@@ -1,5 +1,10 @@
 {
   "challenge": [{
+    "id": "level-up",
+    "category": 500,
+    "done": 0,
+    "limit": "collection"
+  }, {
     "id": "first-prey",
     "points": 100,
     "done": 100,

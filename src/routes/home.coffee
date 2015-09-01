@@ -8,7 +8,7 @@ App.HomeRoute = Ember.Route.extend
 
   # Home data is compound by multiple models (challenges, last activity...)
   # Get all these data once, an cast them down in different attributes
-  model: () ->
+  model: ->
     new Ember.RSVP.Promise (resolve, reject) =>
       Ember.$.getJSON('/data/home.json')
         .done (data) =>

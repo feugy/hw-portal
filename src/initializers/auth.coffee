@@ -1,4 +1,3 @@
-
 Ember.Application.initializer
   name: 'auth-init'
   after: 'torii-session'

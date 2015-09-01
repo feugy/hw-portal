@@ -6,7 +6,7 @@
     <h3 class="primary-title">{{translate 'ttl.home' pseudo=user.pseudo}}</h3>
     {{#each challenges as |challenge|}}
       <article class="challenge l-flow-grid">
-        <i class="icon fi-{{challenge.icon}}"></i>
+        {{#link-to "challenges.details" challenge}}<i class="icon fi-{{challenge.icon}}" ></i>{{/link-to}}
         <div class="content">
           <h4 class="title">{{translate 'ttl.newChallenge' name=challenge.name}}</h4>
           <div class="details">{{challenge.details}}</div>

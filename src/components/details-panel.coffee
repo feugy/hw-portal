@@ -1,4 +1,3 @@
-
 App.DetailsPanelComponent = Ember.Component.extend
 
   classNames: 'off-canvas-wrap l-details-panel'
