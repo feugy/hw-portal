@@ -14,6 +14,8 @@ App.CollectionDetailsRoute = Ember.Route.extend
   #
   # @param {Object} params - route parameters, containing displayed delta kind
   model: (params) ->
+    # Update collection controller to set selected kind
+    @controllerFor('collection').set 'selectedKind', params.kind
     # Use filter that only looks into the cache to get delta from collection
     # and not from server.
     @store.filter 'delta', (delta) ->

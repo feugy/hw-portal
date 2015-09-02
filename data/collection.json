@@ -11,10 +11,16 @@
   }],
   "scenes": [{
     "id": "city",
-    "deltas": [
-      "garbage-bin",
-      "lighter",
-      "torch-light"
-    ]
+    "deltaSize": 200,
+    "deltas": [{
+      "kind": "garbage-bin",
+      "position": [100, 425]
+    }, {
+      "kind": "lighter",
+      "position": [400, 275]
+    }, {
+      "kind": "torch-light",
+      "position": [700, 375]
+    }]
   }]
 }

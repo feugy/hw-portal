@@ -11,11 +11,7 @@
       <div class="l-scrollable">
         {{#each model.scenes as |scene|}}
           <h3>{{scene.id}}</h3>
-          <ul>
-            {{#each scene.deltas as |kind|}}
-            <li>{{#link-to "collection.details" kind}}{{kind}}{{/link-to}}</li>
-           {{/each}}
-          </ul>
+          {{delta-scene model=scene action="select" selected=selectedKind}}
         {{/each}}
       </div>
     {{/if}}

@@ -2,7 +2,6 @@
 
 - redirect to home after log-out
 
-- my collection
 - account
 - sign-in
 - challenge category
