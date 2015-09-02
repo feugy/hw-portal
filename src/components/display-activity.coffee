@@ -1,4 +1,4 @@
-translator = new (require '../helpers/translate')()
+translate = new (require '../helpers/translate')().compute
 
 App.DisplayActivityComponent = Ember.Component.extend
 
@@ -12,10 +12,10 @@ App.DisplayActivityComponent = Ember.Component.extend
   computeName: ( ->
     return unless @model?
     if @model.kind is 'challenge-completed'
-      @set 'name', translator.compute "challenges.#{@model.details.id}.name"
+      @set 'name', translate "challenges.#{@model.details.id}.name"
     else
-      @set 'name', translator.compute "activities.#{@model.kind}.name"
-    @set 'icon', translator.compute "activities.#{@model.kind}.icon"
+      @set 'name', translate "activities.#{@model.kind}.name"
+    @set 'icon', translate "activities.#{@model.kind}.icon"
     count = 1
     if @model.details?.deltas?.length
       count = (if @model.kind is 'delta-lost' then -1 else 1) * @model.details.deltas.length

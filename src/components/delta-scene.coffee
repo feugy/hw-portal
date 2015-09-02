@@ -13,7 +13,7 @@ App.DeltaSceneComponent = Ember.Component.extend
   # Scene currently displayed
   model: null
 
-  # Selected kind currently displayed
+  # Selected placeholder currently displayed
   selected: null
 
   didInsertElement: ->
@@ -39,38 +39,63 @@ App.DeltaSceneComponent = Ember.Component.extend
     merge.append 'feMergeNode'
       .attr 'in', 'SourceGraphic'
 
-    # Initialize d3
     @updateScene()
 
   updateScene: ->
     size = @model.get 'deltaSize'
     height = size * Math.sqrt(3) / 2
     radius = 0 #0.05
+    path = roundPathCorners "M0,0 L#{size},0 L#{size / 2},#{-height} Z", radius, true
 
-    placeholders = @svg.selectAll('.delta').data @model.get 'placeholders'
+    placeholders = @svg.selectAll('.placeholder').data @model.get 'placeholders'
 
     # Enter section: to create new node for new data
     group = placeholders.enter()
       .append 'g'
-        .attr 'class', 'delta'
+        .attr 'class', 'placeholder'
         .attr 'transform', (d) -> "translate(#{d.position})"
-        .on 'click', (placeholder) => @sendAction 'action', placeholder.kind
+        .on 'click', (placeholder) => @sendAction 'action', placeholder
     group.append 'path'
-      .attr 'd', roundPathCorners "M0,0 L#{size},0 L#{size / 2},#{-height} Z", radius, true
+      .attr 'class', 'delta'
+      .attr 'd', path
+    group.append 'path'
+      .attr 'class', 'owned'
+      .style 'display', 'none'
+      .attr 'd', path
     group.append 'text'
       .attr 'class', 'label'
       .attr 'transform', "translate(#{size / 2} #{height / -2.5})"
 
     # Update section: to update newly and existing nodes
-    placeholders
-      .classed 'selected', (placeholder) => placeholder.kind is @selected
-      .classed 'owned', (placeholder) => @collection.find (delta) -> placeholder.kind is delta.get 'kind'
-      .attr 'filter', null
+    placeholders.classed 'selected', (placeholder) => placeholder.kind is @selected?.kind
 
+    placeholders.select '.owned'
+      .style 'display', (placeholder) =>
+        owned = @collection.find (delta) -> placeholder.kind is delta.get 'kind'
+        if owned? then 'inherit' else 'none'
+
+    # Fill text if multiple deltas of this kind are owned
     placeholders.select '.label'
       .text (placeholder) =>
         num = @collection.filter((delta) -> placeholder.kind is delta.get 'kind').length
         if num > 1 then num else ''
+
+    # Add image
+    placeholders.select '.delta'
+      .attr 'filter', null
+      .attr 'fill', (placeholder) -> "url(##{placeholder.kind})"
+      .each (placeholder) =>
+        @svg.select("##{placeholder.kind}").remove()
+        @svg.select('defs').append 'pattern'
+          .attr 'id', placeholder.kind
+          .attr 'viewBox', "0 0 #{size} #{size}"
+          .attr 'preserveAspectRatio', 'xMidYMin slice'
+          .attr 'width', 1
+          .attr 'height', 1
+          .append 'image'
+            .attr 'width', size
+            .attr 'height', size
+            .attr 'xlink:href', placeholder.image
 
     @animateSelected()
 
@@ -85,7 +110,7 @@ App.DeltaSceneComponent = Ember.Component.extend
     shadowHeight = 8
 
     # Apply the filter
-    @svg.select('.delta.selected').attr 'filter', 'url(#shadow)'
+    @svg.select('.selected .delta').attr 'filter', 'url(#shadow)'
 
     # Animates it
     @svg.select('#shadow feGaussianBlur')

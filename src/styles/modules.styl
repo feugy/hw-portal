@@ -127,15 +127,14 @@
 .delta-scene
   border 2px solid $third-color
 
-  .delta
+  .placeholder
     cursor pointer
 
-    > path
-      fill $main-bg-color
-      stroke $secondary-color
-      stroke-width 2px
+    .owned
+      fill $third-color
+      opacity 0.75
 
-    > .label
+    .label
       font-size 6.5rem
       fill $main-bg-color
       stroke $primary-color
@@ -143,6 +142,7 @@
       text-anchor middle
       dominant-baseline central
 
-    &.owned > path
-      fill $third-color
-
+.delta-scene .placeholder .delta
+.delta .placeholder
+  stroke $secondary-color
+  stroke-width 2px

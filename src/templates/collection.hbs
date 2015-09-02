@@ -11,7 +11,7 @@
       <div class="l-scrollable">
         {{#each model.scenes as |scene|}}
           <h3>{{scene.name}}</h3>
-          {{delta-scene model=scene collection=model.deltas selected=selectedKind action="select"}}
+          {{delta-scene model=scene collection=model.deltas selected=placeholder action="select"}}
         {{/each}}
       </div>
     {{/if}}

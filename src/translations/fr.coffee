@@ -57,6 +57,7 @@ I18n.translations.fr =
     logInWith: 'Connecte toi avec'
     noActivity: 'Il était temps que tu reviennes !'
     noChallenge: 'Tout va bien, continue comme ça.'
+    noDelta: 'Tu n\'a pas encore de delta de ce type'
     noResults: 'Aucun résultat'
     signIn: 'Crée ton compte Huby Woky'
     scrollEnds: 'Tous les résultats sont affichés'
@@ -87,6 +88,7 @@ I18n.translations.fr =
     home: 'Heureux de te revoir {{pseudo}} !'
     logIn: 'Déjà membre ?'
     newChallenge: 'Nouveau challenge : {{name}} !'
+    ownedDelta: 'Tes deltas'
     recentActivity: 'Activité récente'
     signIn: 'Nouveau membre ?'
     trophiesRanking: 'Classement des trophées'
@@ -111,7 +113,7 @@ I18n.translations.fr =
     'lighter':
       name: 'Briquet'
       details: 'La lumière du briquet est faiblarde, mais toujours la bienvenue'
-    'garbage-lid':
+    'garbage-bin':
       name: 'Couvercle de poubelle'
       details: 'Un bouclier rudimentaire. Toujours mieux que rien'
 

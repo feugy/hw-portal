@@ -14,13 +14,16 @@
     "deltaSize": 250,
     "placeholders": [{
       "kind": "garbage-bin",
-      "position": [100, 425]
+      "position": [100, 425],
+      "image": "http://placehold.it/200x200/ffffff"
     }, {
       "kind": "lighter",
-      "position": [400, 275]
+      "position": [400, 275],
+      "image": "http://placehold.it/200x200/ffffff"
     }, {
       "kind": "torch-light",
-      "position": [700, 375]
+      "position": [700, 375],
+      "image": "http://placehold.it/200x200/ffffff"
     }]
   }]
 }

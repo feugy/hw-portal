@@ -1,9 +1,19 @@
 <div>
-  <h3>Delta details</h3>
-  {{#each model as |delta|}}
-    <div>{{delta.id}}</div>
-    <div>{{delta.kind}}</div>
+  <h3>{{title}}</h3>
+  <div class="delta-container">
+    {{delta-placeholder model=placeholder}}
+  </div>
+  <div>
+    {{details}}
+  </div>
+  {{#if model}}
+    <h4>{{translate 'ttl.ownedDelta'}}</h4>
+    <ul>
+    {{#each model as |delta|}}
+      <li>{{delta.id}}</li>
+    {{/each}}
+    </ul>
   {{else}}
-    TODO none
-  {{/each}}
+    <span class="no-delta">{{translate 'lbl.noDelta'}}</span>
+  {{/if}}
 </div>
