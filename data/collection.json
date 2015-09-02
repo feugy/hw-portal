@@ -8,5 +8,13 @@
   }, {
     "id": "000000000003",
     "kind": "lighter"
+  }],
+  "scenes": [{
+    "id": "city",
+    "deltas": [
+      "garbage-bin",
+      "lighter",
+      "torch-light"
+    ]
   }]
 }

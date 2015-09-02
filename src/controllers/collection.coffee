@@ -12,12 +12,3 @@ App.CollectionController = Ember.Controller.extend
   updateSelected: (->
     @transitionToRoute 'collection' unless @selected?
   ).observes 'selected'
-
-  actions:
-
-    # When a given delta is clicked, transition to the selected delta details
-    #
-    # @param {Model} delta - selected delta
-    select: (delta) ->
-      @set 'selected', delta
-      @transitionToRoute 'collection.delta-details', @selected.id if @selected?

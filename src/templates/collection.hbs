@@ -9,11 +9,14 @@
         <h2 class="small-8 column">{{translate 'nav.collection'}}</h2>
       </header>
       <div class="l-scrollable">
-        <ul>
-        {{#each model.deltas as |delta|}}
-          <li {{action "select" delta}}>{{delta.kind}}</li>
+        {{#each model.scenes as |scene|}}
+          <h3>{{scene.id}}</h3>
+          <ul>
+            {{#each scene.deltas as |kind|}}
+            <li>{{#link-to "collection.details" kind}}{{kind}}{{/link-to}}</li>
+           {{/each}}
+          </ul>
         {{/each}}
-        </ul>
       </div>
     {{/if}}
   {{/details-panel}}

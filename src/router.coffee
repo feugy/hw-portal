@@ -5,7 +5,7 @@ require './routes/home'
 require './routes/challenges'
 require './routes/challenges/details'
 require './routes/collection'
-require './routes/collection/delta-details'
+require './routes/collection/details'
 require './adapters/fixtures'
 
 App.Router = Ember.Router.extend location: 'history'
@@ -17,4 +17,4 @@ App.Router.map ->
   @route 'challenges', ->
     @route 'details', path: '/:id'
   @route 'collection', ->
-    @route 'delta-details', path: '/:id'
+    @route 'details', path: '/:kind'
