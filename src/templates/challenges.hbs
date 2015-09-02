@@ -1,4 +1,4 @@
-{{#panel-layout session=session}}
+{{#panel-layout session=session logout="backToHome"}}
   {{#details-panel open=selected as |layout|}}
     {{#if layout.isDetails}}
       {{outlet}}

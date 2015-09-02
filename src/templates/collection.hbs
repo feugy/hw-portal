@@ -1,4 +1,4 @@
-{{#panel-layout session=session}}
+{{#panel-layout session=session logout="backToHome"}}
   {{#details-panel open=selected as |layout|}}
     {{#if layout.isDetails}}
       {{outlet}}
@@ -10,8 +10,8 @@
       </header>
       <div class="l-scrollable">
         {{#each model.scenes as |scene|}}
-          <h3>{{scene.id}}</h3>
-          {{delta-scene model=scene action="select" selected=selectedKind}}
+          <h3>{{scene.name}}</h3>
+          {{delta-scene model=scene collection=model.deltas selected=selectedKind action="select"}}
         {{/each}}
       </div>
     {{/if}}

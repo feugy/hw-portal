@@ -29,8 +29,9 @@ App.PanelLayoutComponent = Ember.Component.extend
   ).observes('session.content.currentUser').on 'init'
 
   # On logout change, performs logout
-  logout: ( ->
+  performLogout: ( ->
     @session?.close()
+    @sendAction 'logout'
   ).observes 'isLogout'
 
   # Foundation's off-canvas component

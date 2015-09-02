@@ -11,8 +11,8 @@
   }],
   "scenes": [{
     "id": "city",
-    "deltaSize": 200,
-    "deltas": [{
+    "deltaSize": 250,
+    "placeholders": [{
       "kind": "garbage-bin",
       "position": [100, 425]
     }, {

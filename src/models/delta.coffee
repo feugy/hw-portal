@@ -1,4 +1,4 @@
-translator = new (require '../helpers/translate')()
+translate = new (require '../helpers/translate')().compute
 
 App.DeltaModel = DS.Model.extend
 
@@ -8,5 +8,5 @@ App.DeltaModel = DS.Model.extend
   lastOwner: DS.attr 'string', defaultValue: null
 
   # Computed fields, locale dependant
-  name: Ember.computed -> translator.compute "deltas.#{@kind}.name"
-  details: Ember.computed -> translator.compute "deltas.#{@kind}.details"
+  name: Ember.computed -> translate "deltas.#{@kind}.name"
+  details: Ember.computed -> translate "deltas.#{@kind}.details"

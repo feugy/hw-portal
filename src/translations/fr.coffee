@@ -92,16 +92,7 @@ I18n.translations.fr =
     trophiesRanking: 'Classement des trophées'
     welcome: 'Une terrible menace sommeille dans les ombres...'
 
-  deltas:
-    'torch-light':
-      name: 'Lampe torche'
-      details: 'Avec cette lampe torche, il est possible d\'explorer les endroits les plus sombres.'
-    'lighter':
-      name: 'Briquet'
-      details: 'La lumière du briquet est faiblarde, mais toujours la bienvenue'
-    'garbage-lid':
-      name: 'Couvercle de poubelle'
-      details: 'Un bouclier rudimentaire. Toujours mieux que rien'
+  # Locale-dependent model fields
 
   activities:
     'delta-won':
@@ -112,6 +103,17 @@ I18n.translations.fr =
       icon: 'delta'
     'challenge-completed':
       icon: 'trophy'
+
+  deltas:
+    'torch-light':
+      name: 'Lampe torche'
+      details: 'Avec cette lampe torche, il est possible d\'explorer les endroits les plus sombres.'
+    'lighter':
+      name: 'Briquet'
+      details: 'La lumière du briquet est faiblarde, mais toujours la bienvenue'
+    'garbage-lid':
+      name: 'Couvercle de poubelle'
+      details: 'Un bouclier rudimentaire. Toujours mieux que rien'
 
   challenges:
     'first-prey':
@@ -158,3 +160,7 @@ I18n.translations.fr =
       name: 'Maitre de la jungle'
       details: 'Possède tous les delta de la scène "Jungle"'
       icon: 'trees'
+
+  scenes:
+    city:
+      name: 'La ville'

@@ -1,3 +1,4 @@
+require './routes/application'
 require './routes/index'
 require './routes/rankings'
 require './routes/connect'

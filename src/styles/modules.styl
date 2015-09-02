@@ -125,11 +125,24 @@
         display none !important
 
 .delta-scene
-  background $third-color
-  margin 1rem
+  border 2px solid $third-color
 
-  .triangle
-    fill blue
+  .delta
+    cursor pointer
 
-    &.selected
-      fill red
+    > path
+      fill $main-bg-color
+      stroke $secondary-color
+      stroke-width 2px
+
+    > .label
+      font-size 6.5rem
+      fill $main-bg-color
+      stroke $primary-color
+      stroke-width 0.02em
+      text-anchor middle
+      dominant-baseline central
+
+    &.owned > path
+      fill $third-color
+

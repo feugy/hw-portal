@@ -1,4 +1,4 @@
-translator = new (require '../helpers/translate')()
+translate = new (require '../helpers/translate')().compute
 
 App.ChallengeModel = DS.Model.extend
 
@@ -10,6 +10,6 @@ App.ChallengeModel = DS.Model.extend
   category: DS.attr 'string'
 
   # Computed fields, locale dependant
-  name: Ember.computed -> translator.compute "challenges.#{@id}.name"
-  details: Ember.computed -> translator.compute "challenges.#{@id}.details"
-  icon: Ember.computed -> translator.compute "challenges.#{@id}.icon"
+  name: Ember.computed -> translate "challenges.#{@id}.name"
+  details: Ember.computed -> translate "challenges.#{@id}.details"
+  icon: Ember.computed -> translate "challenges.#{@id}.icon"

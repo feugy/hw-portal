@@ -1,4 +1,5 @@
 require '../models/delta'
+require '../models/scene'
 require '../components/details-panel'
 require '../controllers/collection'
 
@@ -18,6 +19,9 @@ App.CollectionRoute = Ember.Route.extend
             data.deltas = (for delta in data.deltas
               @store.push @store.normalize 'delta', delta
             )
-          console.log 'end model'
+          if data.scenes?
+            data.scenes = (for scene in data.scenes
+              @store.push @store.normalize 'scene', scene
+            )
           resolve data
         .fail reject

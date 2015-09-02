@@ -1,5 +1,5 @@
 require '../components/panel-layout'
-translator = new (require '../helpers/translate')()
+translate = new (require '../helpers/translate')().compute
 
 signInEvents = ['signIn.login', 'signIn.password', 'signIn.confirm']
 logInEvents = ['logIn.login', 'logIn.password']
@@ -68,9 +68,9 @@ App.ConnectController = Ember.Controller.extend
 
   init: (args...) ->
     @_super args...
-    @emailPlaceholder = translator.compute 'plh.email'
-    @passwordPlaceholder = translator.compute 'plh.password'
-    @passwordConfirmPlaceholder = translator.compute 'plh.passwordConfirm'
+    @emailPlaceholder = translate 'plh.email'
+    @passwordPlaceholder = translate 'plh.password'
+    @passwordConfirmPlaceholder = translate 'plh.passwordConfirm'
 
     # Because of their cyclic nature, checkLogIn and checkSignIn must be manually
     # wired and unwired, and not use Ember.run.Once to keep their synchronism
