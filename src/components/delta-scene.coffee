@@ -44,7 +44,7 @@ App.DeltaSceneComponent = Ember.Component.extend
   updateScene: ->
     size = @model.get 'deltaSize'
     height = size * Math.sqrt(3) / 2
-    radius = 0 #0.05
+    radius = 0.02
     path = roundPathCorners "M0,0 L#{size},0 L#{size / 2},#{-height} Z", radius, true
 
     placeholders = @svg.selectAll('.placeholder').data @model.get 'placeholders'

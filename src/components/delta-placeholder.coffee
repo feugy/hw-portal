@@ -14,12 +14,12 @@ App.DeltaPlaceholderComponent = Ember.Component.extend
   model: null
 
   didInsertElement: ->
-    @height = @offset + @size * Math.sqrt(3) / 2
-    @set 'viewBox', "0 0 #{@size + @offset * 2} #{@height + @offset}"
+    @height = @size * Math.sqrt(3) / 2
+    @set 'viewBox', "0 0 #{@size + @offset * 2} #{@height + @offset * 2}"
     @update()
 
   update: ->
-    radius = 0 #0.05
+    radius = 0.02
 
     @$('*').remove()
     return unless @model?
@@ -43,11 +43,8 @@ App.DeltaPlaceholderComponent = Ember.Component.extend
       .enter()
         .append 'path'
         .attr 'class', 'placeholder'
-        .attr 'd', roundPathCorners "
-          M#{@offset},#{@height}
-          L#{@offset + @size},#{@height}
-          L#{@offset + @size / 2}, #{@offset} Z
-        ", radius, true
+        .attr 'd', roundPathCorners "M0,#{@height} L#{@size},#{@height} L#{@size / 2},0 Z", radius, true
+        .attr 'transform', "translate(#{@offset} #{@offset})"
         .attr 'fill', (placeholder) -> 'url(#bg)'
 
   # When delta are set, updates

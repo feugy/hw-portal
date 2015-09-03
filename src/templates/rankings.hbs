@@ -13,8 +13,6 @@
   <ul class="list l-scrollable">
     {{#each model as |gamer|}}
       {{ranking-gamer gamer=gamer list=model sort=currentSort.field}}
-    {{else}}
-      <li>{{translate 'lbl.noResults'}}</li>
     {{/each}}
     {{infinity-scroll model=model scrollable=".list" position=scrollPosition}}
   </ul>
