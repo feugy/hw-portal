@@ -24,4 +24,4 @@ App.CollectionDetailsRoute = Ember.Route.extend
     .then (deltas) =>
       # Set collection's selected kind to allow placeholder detection
       @controllerFor('collection').set 'selectedKind', params.kind
-      deltas.content
+      deltas

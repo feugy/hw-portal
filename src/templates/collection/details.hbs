@@ -6,14 +6,29 @@
   <div>
     {{details}}
   </div>
-  {{#if model}}
-    <h4>{{translate 'ttl.ownedDelta'}}</h4>
-    <ul>
-    {{#each model as |delta|}}
-      <li>{{delta.id}}</li>
-    {{/each}}
-    </ul>
+
+  {{#if isLost}}
+    <div class="owned lost">{{translate 'lbl.lostDeltaKind'}}</div>
   {{else}}
-    <span class="no-delta">{{translate 'lbl.noDelta'}}</span>
+    <div class="owned">{{translate 'lbl.ownedDelta' count=model.length}}</div>
   {{/if}}
+
+  {{#each model as |delta|}}
+    <table>
+      <thead>
+        <tr>
+          <th>{{translate 'lbl.owner'}}</th>
+          <th>{{translate 'lbl.since'}}</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each delta.owners as |owner|}}
+          <tr>
+            <td>{{owner.pseudo}}</td>
+            <td>{{date-time owner.since}}</td>
+          </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  {{/each}}
 </div>

@@ -55,11 +55,17 @@ I18n.translations.fr =
     confirmMajority: 'J\'ai plus de 16 ans et j\'ai lu et accepté les conditions d\'utilisation de Huby Woky'
     logIn: 'Ou utiliser ton compte Huby Woky'
     logInWith: 'Connecte toi avec'
+    lostDeltaKind: 'Tu as perdu tous tes deltas de ce type'
     noActivity: 'Il était temps que tu reviennes !'
     noChallenge: 'Tout va bien, continue comme ça.'
-    noDelta: 'Tu n\'a pas encore de delta de ce type'
     noResults: 'Aucun résultat'
+    ownedDelta:
+      one: 'Tu as un seul delta de ce type'
+      other: 'Tu as {{count}} deltas de ce type'
+      zero: 'Tu n\'a pas encore de delta de ce type'
+    owner: 'Proprétaire'
     signIn: 'Crée ton compte Huby Woky'
+    since: 'Depuis le'
     scrollEnds: 'Tous les résultats sont affichés'
     scrollLoading: 'Chargement en cours...'
 
@@ -88,7 +94,6 @@ I18n.translations.fr =
     home: 'Heureux de te revoir {{pseudo}} !'
     logIn: 'Déjà membre ?'
     newChallenge: 'Nouveau challenge : {{name}} !'
-    ownedDelta: 'Tes deltas'
     recentActivity: 'Activité récente'
     signIn: 'Nouveau membre ?'
     trophiesRanking: 'Classement des trophées'
@@ -110,12 +115,15 @@ I18n.translations.fr =
     'torch-light':
       name: 'Lampe torche'
       details: 'Avec cette lampe torche, il est possible d\'explorer les endroits les plus sombres.'
-    'lighter':
+    lighter:
       name: 'Briquet'
-      details: 'La lumière du briquet est faiblarde, mais toujours la bienvenue'
+      details: 'La lumière du briquet est faiblarde, mais toujours la bienvenue.'
     'garbage-bin':
       name: 'Couvercle de poubelle'
-      details: 'Un bouclier rudimentaire. Toujours mieux que rien'
+      details: 'Un bouclier rudimentaire. Toujours mieux que rien.'
+    gourd:
+      name: 'Gourde'
+      details: 'Sans eau, pas d\'expéédition dans les bas-fonds !'
 
   challenges:
     'first-prey':

@@ -1,6 +1,5 @@
 # Features
 
-- delta details: ownership
 - account
 - sign-in
 - challenge category

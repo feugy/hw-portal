@@ -18,3 +18,21 @@ body
   margin-right 0.5em
   line-height 0
   vertical-align middle
+
+table
+  background $main-bg-color
+  border 1px solid $main-bg-color
+  border-collapse initial
+
+  thead tr
+    background transparent
+
+    > th
+      background $secondary-color
+      color $secondary-inverted-color
+
+  tr:nth-of-type(even)
+    background transparent
+
+    > td
+      background darken($main-bg-color, 10%)
