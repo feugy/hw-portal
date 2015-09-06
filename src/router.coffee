@@ -1,4 +1,3 @@
-require './routes/application'
 require './routes/index'
 require './routes/rankings'
 require './routes/connect'
@@ -7,6 +6,7 @@ require './routes/challenges'
 require './routes/challenges/details'
 require './routes/collection'
 require './routes/collection/details'
+require './routes/settings'
 require './adapters/fixtures'
 
 App.Router = Ember.Router.extend location: 'history'
@@ -19,3 +19,4 @@ App.Router.map ->
     @route 'details', path: '/:id'
   @route 'collection', ->
     @route 'details', path: '/:kind'
+  @route 'settings'

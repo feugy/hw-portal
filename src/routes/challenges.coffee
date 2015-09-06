@@ -1,9 +1,7 @@
 require '../models/challenge'
 require '../controllers/challenges'
+AuthenticatedRoute = require './authenticated'
 
-App.ChallengesRoute = Ember.Route.extend
-
-  beforeModel: ->
-    @transitionTo 'index' unless @get 'session.isAuthenticated'
+App.ChallengesRoute = AuthenticatedRoute.extend
 
   model: ->  @store.find 'challenge'

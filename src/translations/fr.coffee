@@ -78,6 +78,7 @@ I18n.translations.fr =
     connect: 'Se connecter'
     home: 'Accueil'
     rankings: 'Classements'
+    settings: 'Ton compte'
 
   plh:
     email: 'Ton email'

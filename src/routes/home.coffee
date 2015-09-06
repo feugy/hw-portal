@@ -1,10 +1,8 @@
+AuthenticatedRoute = require './authenticated'
 require '../models/challenge'
 require '../components/display-activity'
 
-App.HomeRoute = Ember.Route.extend
-
-  beforeModel: ->
-    @transitionTo 'index' unless @get 'session.isAuthenticated'
+App.HomeRoute = AuthenticatedRoute.extend
 
   # Home data is compound by multiple models (challenges, last activity...)
   # Get all these data once, an cast them down in different attributes

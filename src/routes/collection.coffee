@@ -1,13 +1,10 @@
+AuthenticatedRoute = require './authenticated'
 require '../models/delta'
 require '../models/scene'
 require '../components/details-panel'
 require '../controllers/collection'
 
-App.CollectionRoute = Ember.Route.extend
-
-  # Redirect to index if not authenticated
-  beforeModel: ->
-    @transitionTo 'index' unless @get 'session.isAuthenticated'
+App.CollectionRoute = AuthenticatedRoute.extend
 
   # Get collection content, either player's own deltas and existing scenes
   model: ->

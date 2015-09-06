@@ -6,6 +6,5 @@
 
 # Industrialization
 
-- make a AuthenticatedRoute mixin with beforeModel hook an logout actions
 - client dependencies management
 - automated testing
