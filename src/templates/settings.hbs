@@ -3,5 +3,9 @@
     <h2 class="small-8 column">{{translate 'nav.settings'}}</h2>
   </header>
   <div class="l-scrollable">
+    <div class="main-account">
+      <p>{{translate 'msg.mainAccountSettings'}}</p>
+      {{edit-account model=model.accounts.main successfullySaved=mainSuccessfullySaved isExternal=isExternal action="saveMainAccount"}}
+    </div>
   </div>
 {{/panel-layout}}

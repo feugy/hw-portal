@@ -7,6 +7,7 @@ _ = require 'lodash'
 # Special arguments are:
 # - defaultValue: displayed values used if no translation found
 # - defaults: hash used to found expected arguments that were not supplied
+# - fieldSep: set to true to add the default field separator for this locale
 # - count: value used for pluralization
 module.exports = App.TranslateHelper = Ember.Helper.extend
 
@@ -15,4 +16,6 @@ module.exports = App.TranslateHelper = Ember.Helper.extend
     # Always set count because if the translated value supports pluralization
     # and we don't, '[Object object]'' will be displayed
     args.count = if 'count' of args then args.count else 1
-    I18n.translate key, args
+    value = I18n.translate key, args
+    value = value + I18n.translate 'fieldSep'if args.fieldSep
+    value

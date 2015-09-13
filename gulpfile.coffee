@@ -110,6 +110,7 @@ gulp.task 'dev', ->
           args += "_#{param}_#{query[param]}"
         sep = url.pathname.lastIndexOf '.'
         req.url = url.pathname[0...sep] + args + url.pathname[sep..]
+        req.method = 'GET'
         console.log "serve fixture #{req.url}"
         next()
       livereload:

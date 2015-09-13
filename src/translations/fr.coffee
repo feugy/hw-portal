@@ -34,15 +34,21 @@ I18n.translations.fr =
         precision: 2
         format: '%n %u'
 
+  # Used as form's field separator
+  fieldSep: ' :'
+
   # Custom keys
   btn:
     logIn: 'Se connecter'
+    updateFromProvider: 'Rafraîchir'
+    saveAccount: 'Sauver'
     signIn: 'Créer un compte'
     sortByDeltas: 'par deltas'
     sortByScore: 'par score'
     sortByTrophies: 'par trophées'
 
   err:
+    accountNotSaved: 'Echec de la sauvegarde:\n{{err}}'
     loginMissing: 'Merci d\'entrer ton email'
     passwordMissing: 'Merci d\'entrer ton mot de passe'
     passwordConfirmDiffers: 'Confirme de nouveau ton mot de passe'
@@ -53,6 +59,7 @@ I18n.translations.fr =
     challengePointGain: '+ {{points} pts'
     activityPoints: '{{points} pts'
     confirmMajority: 'J\'ai plus de 16 ans et j\'ai lu et accepté les conditions d\'utilisation de Huby Woky'
+    email: 'Email'
     logIn: 'Ou utiliser ton compte Huby Woky'
     logInWith: 'Connecte toi avec'
     lostDeltaKind: 'Tu as perdu tous tes deltas de ce type'
@@ -64,13 +71,17 @@ I18n.translations.fr =
       other: 'Tu as {{count}} deltas de ce type'
       zero: 'Tu n\'a pas encore de delta de ce type'
     owner: 'Proprétaire'
+    password: 'Mot de passe'
+    pseudo: 'Pseudo'
     signIn: 'Crée ton compte Huby Woky'
     since: 'Depuis le'
     scrollEnds: 'Tous les résultats sont affichés'
     scrollLoading: 'Chargement en cours...'
 
   msg:
-    majorityNeeded: 'Si tu as moins de 16 ans, demande à tes parents de créer ton compte.'
+    accountSaved: 'Informations mises à jour !'
+    mainAccountSettings: 'Paramètre du compte principal, détenu par une personne majeure.'
+    majorityNeeded: 'Si tu as moins de 18 ans, demande à tes parents de créer ton compte.'
 
   nav:
     challenges: 'Tes challenges'
@@ -84,6 +95,7 @@ I18n.translations.fr =
     email: 'Ton email'
     password: 'Ton mot de passe'
     passwordConfirm: 'Confirme ton mot de passe'
+    passwordEdition: 'Si tu veux le changer'
 
   ttl:
     app: 'Huby Woky'
