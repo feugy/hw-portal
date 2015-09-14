@@ -6,12 +6,14 @@ App.DeltaPlaceholderComponent = Ember.Component.extend
   attributeBindings: ['viewBox', 'preserveAspectRatio']
   preserveAspectRatio: 'xMidYMid meet'
 
-  # Current size
-  size: 200
-  offset: 5
-
   # Placeholder currently displayed
   model: null
+
+  init: (args...) ->
+    @_super args...
+    # Current size
+    @size = 200
+    @offset = 5
 
   didInsertElement: ->
     @height = @size * Math.sqrt(3) / 2

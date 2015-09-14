@@ -5,8 +5,6 @@ App.DisplayActivityComponent = Ember.Component.extend
   tagName: 'li'
   classNames: 'activity list-item'
   model: null
-  icon: null
-  name: null
   pointsLabel: null
 
   computeName: ( ->

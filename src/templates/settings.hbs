@@ -4,8 +4,20 @@
   </header>
   <div class="l-scrollable">
     <div class="main-account">
+      <h3>{{translate 'ttl.mainAccount'}}</h3>
       <p>{{translate 'msg.mainAccountSettings'}}</p>
       {{edit-account model=model.accounts.main successfullySaved=mainSuccessfullySaved isExternal=isExternal action="saveMainAccount"}}
+    </div>
+    <div class="secondary-accounts">
+      <h3>{{translate 'ttl.secondaryAccounts'}}</h3>
+      <p>{{translate 'msg.secondaryAccounts'}}</p>
+      <ul class="small-block-grid-1 medium-block-grid-2">
+      {{#each secondaries as |secondary|}}
+        <li>
+          {{edit-account model=secondary.model successfullySaved=secondary.successfullySaved isExternal=false action="saveSecondaryAccount"}}
+        </li>
+      {{/each}}
+      </ul>
     </div>
   </div>
 {{/panel-layout}}

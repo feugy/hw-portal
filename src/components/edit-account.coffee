@@ -16,38 +16,26 @@ App.EditAccountComponent = Ember.Component.extend
   # or to null if no save operation triggered (set by controller)
   successfullySaved: null
 
-  # When password/parentalCode has focus, it's clear. Otherwise, it's obfuscated
-  passwordType: 'password'
-  passwordPlaceholder: null
-
-  # Current save result
-  saveResult: null
-
-  # Flag allowing to save, set when a change is detected
-  canSave: false
-
-  # Edited values
-  edited:
-    pseudo: ''
-    email: ''
-    password: ''
-
-  # Alert box style to distinguish errors from success
-  saveResultStyle: 'success'
+  # On component initialization, set locale dependent fields
+  init: (args...) ->
+    @_super args...
+    @passwordType = 'password'
+    @passwordPlaceholder = translate 'plh.passwordEdition'
 
   # When model is updated, set edited values to reflect it
   modelUpdated: (->
     Ember.run.once @, =>
       return unless @model?
-      @set 'edited.pseudo', @get 'model.pseudo'
-      @set 'edited.email', @get 'model.email'
-      @set 'edited.password', ''
+      @set 'edited',
+        pseudo: @get 'model.pseudo'
+        email: @get 'model.email'
+        password: ''
   ).observes('model').on 'init'
 
   # Updates the canSave flag everytime an edited value changes
   editedUpdate: (->
     Ember.run.once @, =>
-      if @model?
+      if @model? and @edited?
         @set 'canSave', @edited.pseudo isnt @get('model.pseudo') or
           @edited.email isnt @get('model.email') or
           @edited.password isnt ''
@@ -73,11 +61,6 @@ App.EditAccountComponent = Ember.Component.extend
       @set 'saveResult', result
       @modelUpdated()
   ).observes('successfullySaved').on 'init'
-
-  # On component initialization, set locale dependent fields
-  init: (args...) ->
-    @_super args...
-    @passwordPlaceholder = translate 'plh.passwordEdition'
 
   actions:
     # When password field gains focus, its content becames readable

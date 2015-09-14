@@ -5,7 +5,6 @@ App.RankingGamerComponent = Ember.Component.extend
   sort: null
   gamer: null
   list: null
-  rank: null
   avatarSize: 50
 
   computeRank: ( ->

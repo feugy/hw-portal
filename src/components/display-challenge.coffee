@@ -3,8 +3,11 @@ App.DisplayChallengeComponent = Ember.Component.extend
   tagName: 'li'
   classNames: 'challenge-card'
   model: null
-  overlayPosition: '100%'
   selected: null
+
+  init: (args...) ->
+    @_super args...
+    @overlayPosition = '100%'
 
   actions:
     select: () ->

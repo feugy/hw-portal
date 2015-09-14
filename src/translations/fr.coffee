@@ -80,8 +80,9 @@ I18n.translations.fr =
 
   msg:
     accountSaved: 'Informations mises à jour !'
-    mainAccountSettings: 'Paramètre du compte principal, détenu par une personne majeure.'
+    mainAccountSettings: 'Paramètre ici ton compte.'
     majorityNeeded: 'Si tu as moins de 18 ans, demande à tes parents de créer ton compte.'
+    secondaryAccounts: 'Tu peux gérer les comptes secondaires de tes enfants.'
 
   nav:
     challenges: 'Tes challenges'
@@ -106,8 +107,10 @@ I18n.translations.fr =
     generalRanking: 'Classement général'
     home: 'Heureux de te revoir {{pseudo}} !'
     logIn: 'Déjà membre ?'
+    mainAccount: 'Compte principal'
     newChallenge: 'Nouveau challenge : {{name}} !'
     recentActivity: 'Activité récente'
+    secondaryAccounts: 'Comptes secondaires'
     signIn: 'Nouveau membre ?'
     trophiesRanking: 'Classement des trophées'
     welcome: 'Une terrible menace sommeille dans les ombres...'

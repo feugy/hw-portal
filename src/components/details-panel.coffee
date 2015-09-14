@@ -5,9 +5,6 @@ App.DetailsPanelComponent = Ember.Component.extend
   # Bound falsy/truthy value used to open or close details
   open: false
 
-  # Private flag used to avoid closing already opened details
-  isOpen: false
-
   # Foundation's off-canvas component
   attributeBindings: ['offCanvas:data-offcanvas']
   offCanvas: true
@@ -16,6 +13,11 @@ App.DetailsPanelComponent = Ember.Component.extend
   # @see https://coderwall.com/p/qkk2zq/components-with-structured-markup-in-ember-js-v1-10
   details: isDetails: true
   title: isTitle: true
+
+  init: (args...) ->
+    @_super args...
+    # Private flag used to avoid closing already opened details
+    @isOPen = false
 
   actions:
     # On close button, force details to hide
