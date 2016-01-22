@@ -1,0 +1,45 @@
+<section class="l-parallax">
+  <div class="l-slide background" id="slide1">
+    <h1 class="title">{{translate 'ttl.welcome'}}</h1>
+    <button class="scroller button" {{action "scrollTo" "#slide2"}}><i class="fi-arrow-down"></i></button>
+  </div>
+  <div class="l-slide foreground" id="slide2">
+    <div class="content">
+      <h2>Plongez dans l'univers d'Huby Woky</h2>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eleifend
+        lacinia nulla. Maecenas aliquet sapien feugiat, egestas lacus sed, gravida
+        nisi. Nam sapien nibh, blandit ac magna ut, semper fermentum risus. Vestibulum
+        molestie non magna eget sodales. Praesent dictum et nibh finibus tempor.
+        Morbi congue aliquam dolor, vel tincidunt odio fermentum quis. Nunc ornare
+        mattis neque ac euismod. Curabitur pellentesque elit a pulvinar rutrum. Donec
+        ullamcorper pulvinar sem fermentum vestibulum. Nam eros leo, imperdiet a metus
+        rutrum, mollis ultricies erat. Vivamus molestie sem blandit euismod cursus.
+        Nullam sit amet fermentum nunc. Vivamus at ipsum vitae est gravida porttitor.
+      </p>
+      <p>
+        In venenatis bibendum consequat. Nulla ut est a diam tristique lacinia.
+        Curabitur commodo justo tortor. Nulla facilisis, lectus ac vestibulum porta,
+        magna nunc dignissim lectus, et eleifend lacus elit eget lorem. Nam enim quam,
+        efficitur eu nisi vitae, consectetur egestas sem. Aliquam at feugiat ipsum, vel
+        laoreet augue. In at velit a nulla lacinia auctor sit amet in erat. Phasellus a
+        venenatis ipsum. Duis varius nunc sed lacus suscipit imperdiet. Vivamus viverra
+        mi quis ipsum eleifend vestibulum. Nam purus risus, semper semper sodales in,
+        elementum ac nisi. Ut sit amet leo elementum, vehicula ante sed, rhoncus metus.
+        Cras vitae ex sollicitudin arcu lacinia placerat. Pellentesque imperdiet,
+        tellus ut facilisis eleifend, felis purus tempus nulla, nec tristique est magna
+        eu felis.
+      </p>
+      <nav class="l-nav">
+        {{#unless user}}
+          {{#link-to 'connect' class='icon-link'}}<i class="fi-paw"></i><label>{{translate 'nav.connect'}}</label>{{/link-to}}
+        {{/unless}}
+        {{#link-to 'rankings' class='icon-link'}}<i class="fi-list-thumbnails"></i><label>{{translate 'nav.rankings'}}</label>{{/link-to}}
+      </nav>
+    </div>
+    <button class="button scroller" {{action "scrollTo" "#slide3"}}><i class="fi-arrow-down"></i></button>
+  </div>
+  <div class="l-slide background" id="slide3">
+    <footer>&copy; Hubvious 2015</footer>
+  </div>
+</section>

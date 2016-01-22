@@ -1,0 +1,278 @@
+@require 'variables'
+@require 'mixins'
+
+// Foundation overloads
+.raw
+  max-width inherit
+
+.move-right .exit-off-canvas
+  box-shadow none
+
+#index
+
+  .l-parallax
+
+    .scroller
+      $edge = 5rem
+      text-align center
+      width $edge
+      line-height $edge
+      border-radius 100%
+      background-color $primary-color
+      color $primary-inverted-color
+      position absolute
+      bottom -3%
+      right 5%
+      margin 0
+      padding 0
+
+      > i
+        font-size 3rem
+        margin 0
+        line-height auto
+
+    > #slide1
+      background-image url('../images/the-city-that-never-sleeps_ad-wheeler.jpg')
+      background-position center top
+      padding-top 35vh
+      text-align center
+      z-index 2
+
+      > .title
+        max-width 75%
+        margin 0 auto
+        text-shadow 1px 1px $black
+
+    > #slide2
+      min-height auto
+      z-index 1
+
+      &:before
+        background-image url('../images/not-that-way_alex-blackstorm.jpg')
+        background-position 75% center
+
+      > .content
+        width 70%
+        margin-left 0
+        margin-right auto
+
+    > #slide3
+      background-image url('../images/callejones-de-motomachi_javi-sevillano.jpg')
+      background-position center top
+      padding-top 20vh
+      z-index 0
+
+      > footer
+        padding 1rem
+        background $secondary-color
+        font-size 1rem
+
+
+#connect
+
+  .sign-in, .log-in
+    padding 3rem
+    border-top 3rem solid transparent
+    border-bottom 3rem solid transparent
+
+    ul
+      text-align left
+      margin 0
+
+      > li
+        list-item none
+        display inline-block
+        font-size 5rem
+        margin -2rem 1rem 0 0
+        > a
+          color $primary-color
+          cursor pointer
+
+    .row:last-child
+      text-align center
+
+  .sign-in input[type=checkbox]
+    margin-top 1rem
+
+  @media only screen and (min-width: 40.0625em)
+
+    .sign-in
+      border-left 1px solid $secondary-color
+
+  @media only screen and (min-width: 64.0625em)
+
+    .l-header
+      display none
+
+#rankings
+
+  .l-header > div
+    position relative
+
+    > .button
+      position absolute
+      top .5rem
+      right -.5rem
+
+  .l-panel
+    display flex
+    flex-direction column
+
+  .list
+    padding 1rem
+    flex 1
+    position relative
+
+  .list-item
+    > *
+      font-size 1.5rem
+      white-space nowrap
+
+      > .symbol
+        font-size 2rem
+        margin-left 1rem
+        vertical-align bottom
+        color $primary-color
+
+    > *:first-child
+      width 2.5rem
+      font-size 2rem
+      font-weight bold
+      text-align center
+
+    > *:nth-child(3)
+      flex 1
+      text-overflow ellipsis
+      overflow hidden
+
+#home
+
+  .l-panel > .l-scrollable
+    padding 1rem
+
+  .primary-title
+    margin-bottom 1rem
+    border-bottom 1px solid $secondary-color
+
+  .secondary-title
+    margin 2rem 0 1rem
+    border-top 1px solid $secondary-color
+
+  .list-item
+    align-items center
+
+    > *
+      font-size 1.2rem
+      white-space nowrap
+
+      > .symbol
+        font-size 3rem
+        color $primary-color
+
+    > *:first-child
+      width 2.5rem
+      line-height 1.5rem
+
+    > *:nth-child(2)
+      width 2.5rem
+      text-align center
+
+    > *:nth-child(3)
+      flex 1
+      text-overflow ellipsis
+      overflow hidden
+
+    > *:nth-child(4)
+      font-size 1rem
+
+    > *:last-child
+      width 15%
+      text-align right
+      text-overflow ellipsis
+      overflow hidden
+
+#challenges\\.index
+#challenges\\.details
+
+  .l-panel .l-scrollable
+    padding 1 rem
+
+  .earned
+    font-style italic
+
+#collection\\.index
+#collection\\.details
+
+  .l-panel .l-scrollable
+    padding 1 rem
+
+#collection\\.details
+
+  .l-details
+
+    .delta-container
+      text-align center
+
+      .delta
+        width 75%
+        display inline-block
+
+    .owned
+      margin 1rem 0
+      font-style italic
+      display inline-block
+
+      &.lost
+        color $red
+
+    table
+      width 100%
+
+// Unused now but may be useful
+.tooltip
+  background-color $main-bg-color
+  border 1px solid $secondary-color
+  color $secondary-color
+
+  h3
+    font-size 1.2rem
+    margin 0 0 0.5rem 0
+    color $primary-color
+
+  .content
+    margin-bottom 1rem
+
+ &.tip-left > .nub
+  // From http://cssarrowplease.com/
+  right 0 !important
+  background $main-bg-color
+  border none
+
+  &:after
+  &:before
+    left 100%
+    top 50%
+    border solid transparent
+    content " "
+    height 0
+    width 0
+    position absolute
+    pointer-events none
+
+  &:after
+    border-left-color $main-bg-color
+    border-width 10px
+    margin-top -10px
+
+  &:before
+    border-left-color $secondary-color
+    border-width 11px
+    margin-top -11px
+
+#settings
+
+  .l-scrollable
+    padding 1rem
+
+  .main-account
+    max-width 600px

@@ -1,0 +1,148 @@
+@require 'variables'
+
+.icon-link
+  text-align center
+  display inline-block
+
+  > i
+    display inline-block
+    $edge = 7rem
+    font-size 5rem
+    width $edge
+    line-height $edge
+    border-radius 100%
+    background-color $primary-color
+    color $primary-inverted-color
+
+  > label
+    color $primary-color
+    font-size 1.5rem
+
+.nav-link
+  cursor pointer
+
+.list
+  width 100%
+  margin 0
+
+  .list-item
+    list-item none
+    display flex
+    justify-content space-around
+    background $third-color
+    color $third-inverted-color
+    margin 0.5rem
+    padding 0 0.5rem
+    line-height 50px
+
+    > *
+      padding 0.5rem
+
+.fi-delta:before
+  transform rotate(-90deg)
+  content "\f198"
+  font-family "foundation-icons"
+  font-style normal
+  font-weight normal
+  font-variant normal
+  text-transform none
+  line-height 1
+  -webkit-font-smoothing antialiased
+  display inline-block
+  text-decoration inherit
+
+.button
+  background-color $primary-color
+  color $primary-inverted-color
+
+.infinity-scroll
+  text-align center
+  padding-bottom 1rem
+
+  > .button
+    position fixed
+    right 2.2rem
+    bottom 0
+    opacity 0.5
+
+    > i
+      margin 0
+      font-size 2rem
+
+.challenge
+  padding 0.5rem
+
+  > .content
+    margin-left 1rem
+
+    > .title
+      margin 0
+
+    > .details
+      margin 0.25rem 0
+
+  > a > .icon
+    $edge = 7rem
+    font-size 5rem
+    width $edge
+    line-height $edge
+    display inline-block
+    border-radius 10%
+    background-color $primary-color
+    color $primary-inverted-color
+    text-align center
+
+.challenge-card
+  padding 1rem
+  text-align center
+
+  > .content
+    width 10rem
+    cursor pointer
+    display inline-block
+    border 2px solid $primary-color
+    background-color $main-bg-color
+    color $primary-color
+    position relative
+    isolation isolate
+
+    > .icon
+      font-size 6rem
+
+    > .overlay
+      position absolute
+      top 0
+      left 0
+      bottom 0
+      background-color rgba($secondary-color ,0.5)
+
+    > .overlay.blend
+      mix-blend-mode difference
+      background-color $primary-inverted-color
+
+    +ifIE()
+      > .overlay.blend
+        display none !important
+
+.delta-scene
+  border 2px solid $third-color
+
+  .placeholder
+    cursor pointer
+
+    .owned
+      fill $third-color
+      opacity 0.75
+
+    .label
+      font-size 6.5rem
+      fill $main-bg-color
+      stroke $primary-color
+      stroke-width 0.02em
+      text-anchor middle
+      dominant-baseline central
+
+.delta-scene .placeholder .delta
+.delta .placeholder
+  stroke $secondary-color
+  stroke-width 2px

@@ -1,0 +1,6 @@
+{{#if model.ended}}
+  <span>{{translate 'lbl.scrollEnds'}}</span>
+{{else}}
+  <span>{{translate 'lbl.scrollLoading'}}</span>
+{{/if}}
+<button class="tiny round button" {{action "scrollToTop"}}><i class="fi-arrow-up"></i></button>

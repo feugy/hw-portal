@@ -6,6 +6,16 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
+  this.route('connect');
+  this.route('home');
+  this.route('rankings');
+  this.route('settings');
+  this.route('challenges', function() {
+    this.route('details', {path: '/:id'});
+  });
+  this.route('collection', function() {
+    this.route('details', {path: '/:kind'});
+  });
 });
 
 export default Router;

@@ -1,0 +1,61 @@
+{
+  "deltas": [{
+    "id": "000000000001",
+    "kind": "garbage-bin",
+    "owners": [{
+      "id": 4,
+      "pseudo": "Dorian",
+      "since": 1424012400000
+    }]
+  }, {
+    "id": "000000000002",
+    "kind": "garbage-bin",
+    "owners": [{
+      "id": 4,
+      "pseudo": "Dorian",
+      "since": 1424012400000
+    }, {
+      "id": 5,
+      "pseudo": "Kévin",
+      "since": 1420887600000
+    }]
+  }, {
+    "id": "000000000003",
+    "kind": "lighter",
+    "owners": [{
+      "id": 4,
+      "pseudo": "Dorian",
+      "since": 1423040400000
+    }, {
+      "id": 3,
+      "pseudo": "Coralie",
+      "since": 1421679600000
+    }, {
+      "id": 5,
+      "pseudo": "Kévin",
+      "since": 1420887600000
+    }]
+  }],
+  "losses": ["gourd"],
+  "scenes": [{
+    "id": "city",
+    "deltaSize": 250,
+    "placeholders": [{
+      "kind": "garbage-bin",
+      "position": [75, 450],
+      "image": "http://placehold.it/200x200/ffffff"
+    }, {
+      "kind": "lighter",
+      "position": [275, 225],
+      "image": "http://placehold.it/200x200/ffffff"
+    }, {
+      "kind": "torch-light",
+      "position": [500, 325],
+      "image": "http://placehold.it/200x200/ffffff"
+    }, {
+      "kind": "gourd",
+      "position": [725, 450],
+      "image": "http://placehold.it/200x200/ffffff"
+    }]
+  }]
+}

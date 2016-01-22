@@ -1,0 +1,34 @@
+<div>
+  <h3>{{title}}</h3>
+  <div class="delta-container">
+    {{delta-placeholder model=placeholder}}
+  </div>
+  <div>
+    {{details}}
+  </div>
+
+  {{#if isLost}}
+    <div class="owned lost">{{translate 'lbl.lostDeltaKind'}}</div>
+  {{else}}
+    <div class="owned">{{translate 'lbl.ownedDelta' count=model.length}}</div>
+  {{/if}}
+
+  {{#each model as |delta|}}
+    <table>
+      <thead>
+        <tr>
+          <th>{{translate 'lbl.owner'}}</th>
+          <th>{{translate 'lbl.since'}}</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each delta.owners as |owner|}}
+          <tr>
+            <td>{{owner.pseudo}}</td>
+            <td>{{date-time owner.since}}</td>
+          </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  {{/each}}
+</div>

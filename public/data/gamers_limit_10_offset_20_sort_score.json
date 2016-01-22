@@ -1,0 +1,79 @@
+{
+  "gamer": [
+    {
+      "id": 28,
+      "pseudo": "Ingrid",
+      "deltaCount": 12,
+      "trophyCount": 76,
+      "score": 6214
+    },
+    {
+      "id": 10,
+      "pseudo": "Arthur",
+      "deltaCount": 34,
+      "trophyCount": 104,
+      "score": 6105
+    },
+    {
+      "id": 2,
+      "pseudo": "Jean",
+      "deltaCount": 67,
+      "trophyCount": 100,
+      "score": 6000
+    },
+    {
+      "id": 11,
+      "pseudo": "Michel",
+      "deltaCount": 27,
+      "trophyCount": 86,
+      "score": 5942
+    },
+    {
+      "id": 33,
+      "pseudo": "Gwënael",
+      "deltaCount": 23,
+      "trophyCount": 54,
+      "score": 5867
+    },
+    {
+      "id": 26,
+      "pseudo": "Nais",
+      "deltaCount": 40,
+      "trophyCount": 61,
+      "score": 5841
+    },
+    {
+      "id": 23,
+      "pseudo": "Garance",
+      "deltaCount": 36,
+      "trophyCount": 39,
+      "score": 5803
+    },
+    {
+      "id": 20,
+      "pseudo": "Dalia",
+      "deltaCount": 30,
+      "trophyCount": 84,
+      "score": 5719
+    },
+    {
+      "id": 21,
+      "pseudo": "Vivan",
+      "deltaCount": 28,
+      "trophyCount": 75,
+      "score": 5704
+    },
+    {
+      "id": 29,
+      "pseudo": "Yohan",
+      "deltaCount": 19,
+      "trophyCount": 68,
+      "score": 5683
+  }
+  ],
+  "meta": {
+    "total": 33,
+    "offset": 20,
+    "limit": 10
+  }
+}

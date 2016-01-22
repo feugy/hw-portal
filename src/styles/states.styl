@@ -1,0 +1,85 @@
+@require 'variables'
+
+.icon-link:hover
+  $color = darken($primary-color, 40%)
+  transition($prop = all, $duration = 150ms)
+    transition $prop $duration
+
+
+  > i
+    transition background-color
+    background-color $color
+
+  > label
+    transition color
+    color $color
+
+.button:hover, .button:focus, .button:active
+  background-color darken($primary-color, 40%)
+
+for selector in 'button.disabled' 'button[disabled]' '.button.disabled' '.button[disabled]'
+  {selector}, {selector}:active, {selector}:focus, {selector}:hover
+    background-color lighten($primary-color, 40%)
+
+.infinity-scroll > .button:hover
+  opacity 1
+
+.hide
+  display none !important
+
+.challenge-card
+
+  &.selected .content
+    transition all 300ms
+    box-shadow 0 0.5rem 1rem $shadow-color
+
+  .overlay
+    transition right 1s
+
+.l-details-panel.move-left
+  wrapWidth = 70%
+
+  > .inner-wrap
+    transform none
+    padding-right 100% - wrapWidth
+
+  .l-details
+    left wrapWidth
+    right 0
+    width auto
+    transform none
+
+// Main layout is to always display off-canvas's left menu
+// Therefore we must cancel foundation's off-canvas behaviour
+@media only screen and (min-width: 64.0625em)
+
+  .l-panel-wrap
+    // Hide menu toggler
+    > .l-header
+      display none
+
+    // Shift all content to right
+    > *
+      margin-left 15.625rem
+
+    // And displays off-canvas left menu
+    > .l-menu
+      margin-left 0
+      transform none
+      position fixed
+
+  // When going from small screen to larger screen, cancel move-right class
+  .move-right > .l-panel-wrap
+    transform none
+
+    > .exit-off-canvas
+      display none
+
+@media only screen and (max-width: 64.0625em)
+
+  // Let some space for menu-icon button
+  .l-header > h2
+    padding-left 2.5rem
+
+  .button
+    padding .5rem 1rem

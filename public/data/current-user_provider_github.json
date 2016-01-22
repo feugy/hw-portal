@@ -1,0 +1,11 @@
+{
+  "user": {
+    "id": 5,
+    "pseudo": "Kévin",
+    "deltaCount": 25,
+    "trophyCount": 105,
+    "score": 10247,
+    "email": "kev@test.com",
+    "provider": "github"
+  }
+}

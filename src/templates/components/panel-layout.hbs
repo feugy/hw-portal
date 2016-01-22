@@ -1,0 +1,63 @@
+<div class="inner-wrap l-panel-wrap">
+
+  <header class="tab-bar l-header">
+    <div class="left-small">
+      <a class="left-off-canvas-toggle menu-icon"><span></span></a>
+    </div>
+  </header>
+
+  <aside id="left-menu" class="left-off-canvas-menu l-menu">
+    <div class="l-title nav-link">
+      {{#link-to homeLink tagName="h2"}}{{translate 'ttl.app'}}{{/link-to}}
+      {{#link-to homeLink tagName="div"}}<img src="http://placehold.it/200x200">{{/link-to}}
+      {{#if user}}
+        <div class="user-overlay">
+          <h4 class="pseudo">{{user.pseudo}}</h4>
+          <div class="switch tiny logout">
+            {{input id="logout" type="checkbox" checked=isLogout}}
+            <label for="logout"></label>
+          </div>
+        </div>
+      {{/if}}
+    </div>
+    {{#unless user}}
+    <ul class="off-canvas-list">
+      <li>{{#link-to 'connect' class="nav-link"}}<i class="symbol fi-paw"></i>{{translate 'nav.connect'}}{{/link-to}}</li>
+    </ul>
+    {{/unless}}
+    <div class="l-menu-stats">
+      {{#if user}}
+      <ul class="small-block-grid-2">
+        <li>{{user.score}}</li><li><i class="symbol fi-sheriff-badge"></i></li>
+      </ul>
+      <ul class="small-block-grid-2">
+        <li>{{user.deltaCount}}</li><li><i class="symbol fi-delta"></i></li>
+      </ul>
+      <ul class="small-block-grid-2">
+        <li>{{user.trophyCount}}</li><li><i class="symbol fi-trophy"></i></li>
+      </ul>
+      {{else}}
+      <ul class="small-block-grid-2">
+        <li>{{stats.playerCount}}</li><li><i class="symbol fi-torsos-all"></i></li>
+      </ul>
+      <ul class="small-block-grid-2">
+        <li>{{stats.deltaCount}}</li><li><i class="symbol fi-delta"></i></li>
+      </ul>
+      {{/if}}
+    </div>
+    <ul class="off-canvas-list">
+      {{#if user}}
+        <li>{{#link-to 'collection' class="nav-link"}}<i class="symbol fi-delta"></i>{{translate 'nav.collection'}}{{/link-to}}</li>
+        <li>{{#link-to 'challenges' class="nav-link"}}<i class="symbol fi-trophy"></i>{{translate 'nav.challenges'}}{{/link-to}}</li>
+        <li>{{#link-to 'settings' class="nav-link"}}<i class="symbol fi-male"></i>{{translate 'nav.settings'}}{{/link-to}}</li>
+      {{/if}}
+      <li>{{#link-to 'rankings' class="nav-link"}}<i class="symbol fi-list-thumbnails"></i>{{translate 'nav.rankings'}}{{/link-to}}</li>
+    </ul>
+  </aside>
+
+  <section class="l-panel">
+    {{yield}}
+  </section>
+
+  <a class="exit-off-canvas"></a>
+</div>

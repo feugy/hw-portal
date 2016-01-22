@@ -1,0 +1,45 @@
+<div class="row">
+  <div class="small-3 columns">
+    <label for="right-label" class="right inline">{{translate 'lbl.pseudo' fieldSep=true}}</label>
+  </div>
+  <div class="small-9 columns">
+    {{input value=edited.pseudo}}
+  </div>
+</div>
+{{#unless isExternal}}
+<div class="row">
+  <div class="small-3 columns">
+    <label for="right-label" class="right inline">{{translate 'lbl.email' fieldSep=true}}</label>
+  </div>
+  <div class="small-9 columns">
+    {{input type="email" value=edited.email}}
+  </div>
+</div>
+<div class="row">
+  <div class="small-3 columns">
+    <label for="right-label" class="right inline">{{translate 'lbl.password' fieldSep=true}}</label>
+  </div>
+  <div class="small-9 columns">
+    {{input value=edited.password placeholder=passwordPlaceholder focus-in="editPassword" focus-out="stopEditPassword" type=passwordType}}
+  </div>
+</div>
+{{else}}
+<div class="row">
+  <div class="small-3 columns">
+    <label for="right-label" class="right inline">{{translate 'lbl.email' fieldSep=true}}</label>
+  </div>
+  <div class="small-5 columns">
+    {{input type="email" value=edited.email readonly=true}}
+  </div>
+  <div class="small-4 columns">
+    <a class="button right" href="" {{action "updateFromProvider"}}><i class="fi-refresh"></i>{{translate 'btn.updateFromProvider'}}</a>
+  </div>
+</div>
+{{/unless}}
+<p class="text-center">
+  <div class="alert-box {{saveResultStyle}} {{unless saveResult 'hide'}}">
+    {{saveResult}}
+    <a href="" {{action "closeSaveResult"}} class="close">&times;</a>
+  </div>
+  <a class="button {{unless canSave 'disabled'}}" href="" {{action "save"}}><i class="fi-save"></i>{{translate 'btn.saveAccount'}}</a>
+</p>

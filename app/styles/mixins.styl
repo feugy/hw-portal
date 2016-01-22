@@ -1,0 +1,21 @@
+vendor-prefix(rule, args...)
+  -webkit-{rule} args
+  -khtml-{rule} args
+  -moz-{rule} args
+  -ms-{rule} args
+  {rule} args
+
+user-select(value)
+  vendor-prefix(user-select, value)
+
+placeholder(selector)
+  {selector}::-moz-placeholder
+    {block}
+  {selector}::-webkit-input-placeholder
+    {block}
+  {selector}::-ms-input-placeholder
+    {block}
+
+ifIE()
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active)
+    {block}

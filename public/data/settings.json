@@ -1,0 +1,13 @@
+{
+  "accounts": {
+    "main": {},
+    "secondary": [{
+      "id": 6,
+      "pseudo": "Julie",
+      "email": "julie@yopmain.com"
+    }, {
+      "id": 7,
+      "pseudo": "Hugo"
+    }]
+  }
+}

@@ -1,0 +1,31 @@
+{{#panel-layout session=session logout="backToHome"}}
+  <header class="l-header row">
+    <h2 class="small-8 column">{{translate 'nav.home'}}</h2>
+  </header>
+  <div class="l-scrollable">
+    <h3 class="primary-title">{{translate 'ttl.home' pseudo=user.pseudo}}</h3>
+    {{#each model.challenges as |challenge|}}
+      <article class="challenge l-flow-grid">
+        {{#link-to "challenges.details" challenge}}<i class="icon fi-{{challenge.icon}}" ></i>{{/link-to}}
+        <div class="content">
+          <h4 class="title">{{translate 'ttl.newChallenge' name=challenge.name}}</h4>
+          <div class="details">{{challenge.details}}</div>
+          <div class="clearfix">
+            <span class="left">{{translate 'lbl.challengePointGain' points=challenge.points}}</span>
+            <span class="right">{{translate 'lbl.challengeLimit'}}{{date-time challenge.limit time=true}}</span>
+          </div>
+        </div>
+      </article>
+    {{else}}
+      <span>{{translate 'lbl.noChallenge'}}</span>
+    {{/each}}
+    <h3 class="secondary-title">{{translate 'ttl.recentActivity'}}</h3>
+    <ul class="list">
+    {{#each model.activities as |activity|}}
+      {{display-activity model=activity}}
+    {{else}}
+      <li class="list-item">{{translate 'lbl.noActivity'}}</li>
+    {{/each}}
+    </ul>
+  </div>
+{{/panel-layout}}

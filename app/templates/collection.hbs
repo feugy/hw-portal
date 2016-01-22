@@ -1,0 +1,19 @@
+{{#panel-layout session=session logout="backToHome"}}
+  {{#details-panel open=selected as |layout|}}
+    {{#if layout.isDetails}}
+      {{outlet}}
+    {{else if layout.isTitle}}
+      {{translate 'ttl.collectionDetails'}}
+    {{else}}
+      <header class="l-header row">
+        <h2 class="small-8 column">{{translate 'nav.collection'}}</h2>
+      </header>
+      <div class="l-scrollable">
+        {{#each model.scenes as |scene|}}
+          <h3>{{scene.name}}</h3>
+          {{delta-scene model=scene collection=model.deltas selected=placeholder action="select"}}
+        {{/each}}
+      </div>
+    {{/if}}
+  {{/details-panel}}
+{{/panel-layout}}

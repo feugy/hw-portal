@@ -1,0 +1,6 @@
+<h3>{{title}}</h3>
+<div class='content'>{{details}}</div>
+{{#if model.earned}}
+  <div class='earned'>{{translate 'lbl.challengeEarned'}}{{date-time model.earned}}</div>
+{{/if}}
+<div class='points right' >{{translate 'lbl.activityPoints' points=model.points}}</div>

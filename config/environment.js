@@ -2,7 +2,7 @@
 
 module.exports = function(environment) {
   var ENV = {
-    modulePrefix: 'portal2',
+    modulePrefix: 'hw-portal',
     environment: environment,
     baseURL: '/',
     locationType: 'auto',
@@ -13,9 +13,35 @@ module.exports = function(environment) {
       }
     },
 
+    torii: {
+      // a 'session' property will be injected on routes and controllers
+      sessionServiceName: 'session',
+      providers: {
+        'github-oauth2': {
+          apiKey: '9c31116c5a8dcf0e26f7',
+          scope: 'user'
+        },
+        'google-oauth2': {
+          apiKey: '1018497886467-g2g9p8lhmdgtjfckqbkvhdfjl9pk2bm8.apps.googleusercontent.com',
+          scope: 'profile'
+        },
+        'huby-woky': {}
+      }
+    },
+
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
+    },
+
+    contentSecurityPolicy: {
+      'style-src': "'self' 'unsafe-inline'",
+      'default-src': "'self'",
+      'script-src': "'self'",
+      'font-src': "'self'",
+      'connect-src': "'self'",
+      'img-src': "'self'",
+      'media-src': "'self'"
     }
   };
 
@@ -45,3 +71,4 @@ module.exports = function(environment) {
 
   return ENV;
 };
+

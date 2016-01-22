@@ -1,0 +1,46 @@
+@require 'mixins'
+@require 'layouts'
+@require 'modules'
+@require 'states'
+@require 'theme-default'
+
+body
+  -webkit-touch-callout none
+  user-select none
+
++placeholder(input)
+  color $secondary-color
+  font-style italic
+
+.button > i
+  display inline
+  font-size 1.3em
+  margin-right 0.5em
+  line-height 0
+  vertical-align middle
+
+table
+  background $main-bg-color
+  border 1px solid $main-bg-color
+  border-collapse initial
+
+  thead tr
+    background transparent
+
+    > th
+      background $secondary-color
+      color $secondary-inverted-color
+
+  tr:nth-of-type(even)
+    background transparent
+
+    > td
+      background darken($main-bg-color, 10%)
+
+label
+input[type = "text"]
+input[type = "email"]
+  font-size 1rem
+
+label.inline
+  padding 0.4rem 0
